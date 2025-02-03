@@ -3,3 +3,11 @@ prediction:
     - S How can I help?
     - U Was my loan application approved?
     - S Sorry, your loan application was rejected.
+
+enthymematic_explanation:
+  turns:
+    - S How can I help?
+    - U Was my loan application approved?
+    - S Sorry, your loan application was rejected.
+    - U Why?
+    - S Your income is below the threshold.

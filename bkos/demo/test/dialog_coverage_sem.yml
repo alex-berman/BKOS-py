@@ -3,3 +3,11 @@ prediction:
     - S OfferHelp()
     - U Ask(BooleanQuestion(LoanApplicationApproved()))
     - S Disconfirm(Not(LoanApplicationApproved()))
+
+enthymematic_explanation:
+  turns:
+    - S OfferHelp()
+    - U Ask(BooleanQuestion(LoanApplicationApproved()))
+    - S Disconfirm(Not(LoanApplicationApproved()))
+    - U Ask(Why())
+    - S Assert(IncomeBelowThreshold())

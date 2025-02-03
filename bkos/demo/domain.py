@@ -24,3 +24,7 @@ class DemoDomain(Domain):
             yield IncomeBelowThreshold()
         elif proposition == IncomeBelowThreshold():
             yield Income(1000)
+
+    def answer_delivery_strategy(self, question) -> AnswerDeliveryStrategy:
+        return AnswerDeliveryStrategy.INCREMENTAL if isinstance(question, Why) \
+            else AnswerDeliveryStrategy.SINGLE_TURN

@@ -15,4 +15,6 @@ def generate_clause(move):
         return 'How can I help?'
     if move == Disconfirm(Not(LoanApplicationApproved())):
         return 'sorry, your loan application was rejected.'
+    if move == Assert(IncomeBelowThreshold()):
+        return 'your income is below the threshold.'
     raise Exception(f'Failed to generate clause for move {move}')

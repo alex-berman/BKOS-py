@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List
 
-from bkos.ontology import AgendaItem, Belief, AnswerDeliveryStrategy
+from bkos.ontology import AgendaItem, Belief, AnswerDeliveryStrategy, Question
 
 
 class Domain(ABC):
@@ -13,7 +13,7 @@ class Domain(ABC):
     def initial_beliefs(self) -> List[Belief]:
         pass
 
-    def answer_delivery_strategy(self, question) -> AnswerDeliveryStrategy:
+    def answer_delivery_strategy(self, question: Question) -> AnswerDeliveryStrategy:
         return AnswerDeliveryStrategy.SINGLE_TURN
 
     dependencies = {}
