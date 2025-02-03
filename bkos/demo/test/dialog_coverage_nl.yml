@@ -11,3 +11,13 @@ enthymematic_explanation:
     - S Sorry, your loan application was rejected.
     - U Why?
     - S Your income is below the threshold.
+
+topos_elicitation:
+  turns:
+    - S How can I help?
+    - U Was my loan application approved?
+    - S Sorry, your loan application was rejected.
+    - U Why?
+    - S Your income is below the threshold.
+    - U So what?
+    - S If the applicant's income is too low, a loan cannot be obtained.

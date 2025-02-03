@@ -11,3 +11,13 @@ enthymematic_explanation:
     - S Disconfirm(Not(LoanApplicationApproved()))
     - U Ask(Why())
     - S Assert(IncomeBelowThreshold())
+
+topos_elicitation:
+  turns:
+    - S OfferHelp()
+    - U Ask(BooleanQuestion(LoanApplicationApproved()))
+    - S Disconfirm(Not(LoanApplicationApproved()))
+    - U Ask(Why())
+    - S Assert(IncomeBelowThreshold())
+    - U ICM(understanding, negative)
+    - S Assert(Supports(IncomeBelowThreshold(), Not(LoanApplicationApproved())))

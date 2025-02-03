@@ -15,15 +15,12 @@ class DemoDomain(Domain):
         return [Belief(Not(LoanApplicationApproved())), Belief(IncomeBelowThreshold())]
 
     dependencies = {
-        LoanApplicationApproved: {IncomeBelowThreshold},
-        IncomeBelowThreshold: {Income}
+        LoanApplicationApproved: {IncomeBelowThreshold}
     }
 
     def get_support(self, proposition):
         if proposition == Not(LoanApplicationApproved()):
             yield IncomeBelowThreshold()
-        elif proposition == IncomeBelowThreshold():
-            yield Income(1000)
 
     def answer_delivery_strategy(self, question) -> AnswerDeliveryStrategy:
         return AnswerDeliveryStrategy.INCREMENTAL if isinstance(question, Why) \
