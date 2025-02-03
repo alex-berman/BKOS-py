@@ -1,0 +1,5 @@
+prediction:
+  turns:
+    - S OfferHelp()
+    - U Ask(BooleanQuestion(LoanApplicationApproved()))
+    - S Disconfirm(Not(LoanApplicationApproved()))

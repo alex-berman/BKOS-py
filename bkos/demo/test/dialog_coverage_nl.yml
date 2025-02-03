@@ -1,0 +1,5 @@
+prediction:
+  turns:
+    - S How can I help?
+    - U Was my loan application approved?
+    - S Sorry, your loan application was rejected.

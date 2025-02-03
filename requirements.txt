@@ -1,0 +1,4 @@
+dataclass-wizard
+pyyaml
+structlog
+pytest
