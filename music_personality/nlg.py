@@ -91,15 +91,15 @@ def generate_feature_value_judgement(proposition):
 
 
 def generate_supports(proposition):
-    return f"statistically, people that like {generate_feature_value_judgement(proposition.antecedent)} are more likely to be {generate_extraversion_adjective(proposition.consequent)}."
+    return f"i generally predict that people that like {generate_feature_value_judgement(proposition.antecedent)} are more likely to be {generate_extraversion_adjective(proposition.consequent)}."
 
 
 def generate_not_explains(proposition):
-    return f"no, statistically, people that like {generate_feature_value_judgement(proposition.explanans)} are not more likely to be {generate_extraversion_adjective(proposition.explanandum)}."
+    return f"no, i generally predict that people that like {generate_feature_value_judgement(proposition.explanans)} are not more likely to be {generate_extraversion_adjective(proposition.explanandum)}."
 
 
 def generate_not_supports(proposition):
-    return f"statistically, people that like {generate_feature_value_judgement(proposition.antecedent)} are not more likely to be {generate_extraversion_adjective(proposition.consequent)}."
+    return f"i generally predict that people that like {generate_feature_value_judgement(proposition.antecedent)} are not more likely to be {generate_extraversion_adjective(proposition.consequent)}."
 
 
 def generate_higher_than_average(proposition):
@@ -125,7 +125,7 @@ def generate_negative_acceptance(reason):
     if isinstance(reason, LackKnowledge):
         if isinstance(reason.question, Why) and isinstance(reason.question.explanandum, Supports) and \
                 reason.question.explanandum.consequent in [Extraverted(), Not(Extraverted())]:
-            return "I cannot explain the reason behind the correlations that I've found."
+            return "I cannot explain the reasons behind the patterns that I've learned."
         raise Exception(f'Failed to generate negative acceptance ICM with reason {reason}')
     if reason in [Extraverted(), Not(Extraverted())]:
         return f"No, I don't think this person is {generate_extraversion_adjective(reason)}."
