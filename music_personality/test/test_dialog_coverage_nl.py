@@ -4,9 +4,10 @@ import yaml
 import pytest
 
 from bkos import bot
-import bkos.music_personality.domain
-from bkos.test.dialogtest import run_dialog_test_sem
-from bkos import semantic_serialization
+import music_personality.domain
+import music_personality.nlu_simple
+import music_personality.nlg
+from bkos.test.dialogtest import run_dialog_test_nl
 
 
 game_modes = {
@@ -18,7 +19,7 @@ game_modes = {
 def load_tests():
     for game_mode in game_modes.keys():
         contents = yaml.load(
-            open(f'bkos/music_personality/test/dialog_coverage_{game_modes[game_mode]}_sem.yml').read(), yaml.Loader)
+            open(f'music_personality/test/dialog_coverage_{game_modes[game_mode]}_nl.yml').read(), yaml.Loader)
         for name, content in contents.items():
             yield game_mode, name, content
 
@@ -28,7 +29,9 @@ class TestDialogs(object):
     def test_dialog(self, game_mode, name, content):
         resources = {
             'game_mode': game_mode,
-            'domain_class': bkos.music_personality.domain.MusicPersonalityDomain,
+            'domain_class': music_personality.domain.MusicPersonalityDomain,
+            'nlu': music_personality.nlu_simple,
+            'nlg': music_personality.nlg,
         }
         resources['extraversion_model_bundle'] = {
             'model': MagicMock(),
@@ -47,6 +50,4 @@ class TestDialogs(object):
             resources['explainer'].global_coefficients.return_value = facts['global_coefficients']
         if 'local_contributions' in facts:
             resources['explainer'].local_contributions.return_value = facts['local_contributions']
-        semantic_serialization.initialize()
-        semantic_serialization.register_module(bkos.music_personality.ontology)
-        run_dialog_test_sem(bot, resources, content['turns'], session_data)
+        run_dialog_test_nl(bot, resources, content['turns'], session_data)

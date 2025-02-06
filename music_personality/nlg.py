@@ -1,6 +1,6 @@
-from bkos.music_personality.ontology import *
-from bkos.music_personality.nl import feature_np
-from bkos.music_personality.audio_features import AUDIO_FEATURES
+from music_personality.ontology import *
+from music_personality.nl import feature_np
+from music_personality.audio_features import AUDIO_FEATURES
 
 
 extraversion_adjective = {

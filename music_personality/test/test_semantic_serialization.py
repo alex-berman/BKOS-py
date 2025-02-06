@@ -1,7 +1,7 @@
 import pytest
 
-import bkos.music_personality.ontology
-from bkos.music_personality.ontology import *
+import music_personality.ontology
+from music_personality.ontology import *
 from bkos import semantic_serialization
 
 
@@ -48,6 +48,6 @@ class TestSemanticSerialization:
     @pytest.mark.parametrize('string,object', instances)
     def test_deserialize(self, string, object):
         semantic_serialization.initialize()
-        semantic_serialization.register_module(bkos.music_personality.ontology)
+        semantic_serialization.register_module(music_personality.ontology)
         actual = semantic_serialization.deserialize(string)
         assert actual == object

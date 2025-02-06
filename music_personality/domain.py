@@ -1,8 +1,8 @@
 from typing import List
 
 from bkos.domain import Domain
-from bkos.music_personality import ontology
-from bkos.music_personality.ontology import *
+from music_personality import ontology
+from music_personality.ontology import *
 
 
 class MusicPersonalityDomain(Domain):

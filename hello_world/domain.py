@@ -1,7 +1,7 @@
 from typing import List
 
 from bkos.domain import Domain
-from bkos.hello_world.ontology import *
+from hello_world.ontology import *
 
 
 class DemoDomain(Domain):

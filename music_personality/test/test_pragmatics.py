@@ -3,8 +3,8 @@ from unittest.mock import MagicMock
 import pytest
 
 from bkos.pragmatics import is_relevant_answer
-import bkos.music_personality.domain
-from bkos.music_personality.ontology import *
+import music_personality
+from music_personality.ontology import *
 
 
 class TestPragmatics(object):
@@ -71,7 +71,7 @@ class TestPragmatics(object):
     def test_is_relevant_answer(self, question, proposition, return_value):
         resources = {
             'game_mode': MagicMock(),
-            'domain_class': bkos.music_personality.domain.MusicPersonalityDomain,
+            'domain_class': music_personality.domain.MusicPersonalityDomain,
         }
         resources['extraversion_model_bundle'] = {
             'model': MagicMock(),
@@ -80,5 +80,5 @@ class TestPragmatics(object):
         }
         resources['explainer'] = MagicMock()
         session_data = {'case_info': {}}
-        domain = bkos.music_personality.domain.MusicPersonalityDomain(resources, session_data)
+        domain = music_personality.domain.MusicPersonalityDomain(resources, session_data)
         assert bool(is_relevant_answer(question, proposition, domain)) == return_value
