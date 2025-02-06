@@ -1,6 +1,6 @@
 import yaml
-
 import pytest
+from pathlib import Path
 
 from bkos import bot
 import hello_world
@@ -8,7 +8,7 @@ from bkos.test.dialogtest import run_dialog_test_sem
 from bkos import semantic_serialization
 
 
-test_contents = yaml.load(open('hello_world/test/dialog_coverage_sem.yml').read(), yaml.Loader)
+test_contents = yaml.load(open(f'{Path(__file__).parent}/dialog_coverage_sem.yml').read(), yaml.Loader)
 
 
 class TestDialogs(object):

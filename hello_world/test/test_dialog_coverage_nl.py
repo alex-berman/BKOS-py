@@ -1,6 +1,6 @@
 import yaml
-
 import pytest
+from pathlib import Path
 
 from bkos import bot
 import hello_world.domain
@@ -9,7 +9,7 @@ import hello_world.nlg
 from bkos.test.dialogtest import run_dialog_test_nl
 
 
-test_contents = yaml.load(open('hello_world/test/dialog_coverage_nl.yml').read(), yaml.Loader)
+test_contents = yaml.load(open(f'{Path(__file__).parent}/dialog_coverage_nl.yml').read(), yaml.Loader)
 
 
 class TestDialogs(object):

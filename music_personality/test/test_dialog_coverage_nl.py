@@ -1,7 +1,8 @@
 from unittest.mock import MagicMock
-import yaml
 
+import yaml
 import pytest
+from pathlib import Path
 
 from bkos import bot
 import music_personality.domain
@@ -19,7 +20,7 @@ game_modes = {
 def load_tests():
     for game_mode in game_modes.keys():
         contents = yaml.load(
-            open(f'music_personality/test/dialog_coverage_{game_modes[game_mode]}_nl.yml').read(), yaml.Loader)
+            open(f'{Path(__file__).parent}/dialog_coverage_{game_modes[game_mode]}_nl.yml').read(), yaml.Loader)
         for name, content in contents.items():
             yield game_mode, name, content
 
