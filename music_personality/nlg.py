@@ -91,15 +91,15 @@ def generate_feature_value_judgement(proposition):
 
 
 def generate_supports(proposition):
-    return f"i generally predict that people that like {generate_feature_value_judgement(proposition.antecedent)} are more likely to be {generate_extraversion_adjective(proposition.consequent)}."
+    return f"I generally predict that people that like {generate_feature_value_judgement(proposition.antecedent)} are more likely to be {generate_extraversion_adjective(proposition.consequent)}."
 
 
 def generate_not_explains(proposition):
-    return f"no, i generally predict that people that like {generate_feature_value_judgement(proposition.explanans)} are not more likely to be {generate_extraversion_adjective(proposition.explanandum)}."
+    return f"no, I generally don't predict that people that like {generate_feature_value_judgement(proposition.explanans)} are more likely to be {generate_extraversion_adjective(proposition.explanandum)}."
 
 
 def generate_not_supports(proposition):
-    return f"i generally predict that people that like {generate_feature_value_judgement(proposition.antecedent)} are not more likely to be {generate_extraversion_adjective(proposition.consequent)}."
+    return f"I generally don't predict that people that like {generate_feature_value_judgement(proposition.antecedent)} are more likely to be {generate_extraversion_adjective(proposition.consequent)}."
 
 
 def generate_higher_than_average(proposition):

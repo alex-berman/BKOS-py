@@ -310,7 +310,7 @@ explicitly_ask_how_something_explains_something_when_this_is_not_the_case:
     - U why?
     - S The person likes non-danceable music.
     - U how does liking non-danceable music explain being extraverted?
-    - S No, i generally predict that people that like non-danceable music are not more likely to be extraverted.
+    - S No, I generally don't predict that people that like non-danceable music are more likely to be extraverted.
 
 asking_why_system_does_not_know_why_etc:
   facts:
@@ -478,7 +478,7 @@ user_question_about_factual_support_for_prediction:
     - U why?
     - S The person likes high-energy music.
     - U does the fact that the person likes non-danceable music support the assessment that the person is introverted?
-    - S Yes, i generally predict that people that like non-danceable music are more likely to be introverted.
+    - S Yes, I generally predict that people that like non-danceable music are more likely to be introverted.
 
 user_question_about_unfactual_support_for_prediction:
   facts:
@@ -500,7 +500,7 @@ user_question_about_unfactual_support_for_prediction:
     - U why?
     - S The person likes high-energy music.
     - U does the fact that the person likes non-danceable music support the assessment that the person is extraverted?
-    - S No, i generally predict that people that like non-danceable music are not more likely to be extraverted.
+    - S No, I generally don't predict that people that like non-danceable music are more likely to be extraverted.
 
 user_question_about_factors_considered:
   facts:
