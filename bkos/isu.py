@@ -9,7 +9,7 @@ Rule = Callable[[DialogState], Any]
 
 
 def try_rule(state: DialogState, rule: Rule):
-    logger.debug('try_rule', rule=rule, state=state)
+    logger.debug('try_rule', rule=rule.__name__, state=state)
     result = rule(state)
     if result:
         if isinstance(result, GeneratorType):
