@@ -17,4 +17,5 @@ setup(
     packages=find_packages(),
     install_requires=open("requirements.txt").read().splitlines(),
     python_requires=">=3.9, <4",
+    include_package_data=True,
 )
