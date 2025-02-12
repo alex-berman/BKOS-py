@@ -1,6 +1,6 @@
-from music_personality import ontology
-from music_personality.ontology import *
-from music_personality.audio_features import AUDIO_FEATURES
+from bkos.music_personality import ontology
+from bkos.music_personality.ontology import *
+from bkos.music_personality.audio_features import AUDIO_FEATURES
 
 
 def interpret(utterance_cased):

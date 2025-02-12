@@ -1,4 +1,4 @@
-from hello_world.ontology import *
+from bkos.hello_world.ontology import *
 
 
 def interpret(utterance_cased):

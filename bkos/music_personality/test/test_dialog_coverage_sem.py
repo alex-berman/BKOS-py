@@ -4,8 +4,7 @@ import yaml
 import pytest
 from pathlib import Path
 
-from bkos import bot
-import music_personality
+from bkos import bot, music_personality
 from bkos.test.dialogtest import run_dialog_test_sem
 from bkos import semantic_serialization
 

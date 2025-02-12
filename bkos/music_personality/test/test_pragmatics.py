@@ -3,8 +3,8 @@ from unittest.mock import MagicMock
 import pytest
 
 from bkos.pragmatics import is_relevant_answer
-import music_personality
-from music_personality.ontology import *
+from bkos import music_personality
+from bkos.music_personality.ontology import *
 
 
 class TestPragmatics(object):

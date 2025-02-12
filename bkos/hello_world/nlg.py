@@ -1,4 +1,4 @@
-from hello_world.ontology import *
+from bkos.hello_world.ontology import *
 
 
 def generate(move):

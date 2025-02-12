@@ -2,8 +2,7 @@ import yaml
 import pytest
 from pathlib import Path
 
-from bkos import bot
-import hello_world
+from bkos import bot, hello_world
 from bkos.test.dialogtest import run_dialog_test_sem
 from bkos import semantic_serialization
 

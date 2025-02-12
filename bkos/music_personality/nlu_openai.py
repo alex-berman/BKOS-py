@@ -1,14 +1,15 @@
 import yaml
 
 import openai
+from pathlib import Path
 
-import dialog.music_personality.ontology
-from dialog import semantic_serialization
-from dialog.logger import logger
+import bkos.music_personality.ontology
+from bkos import semantic_serialization
+from bkos.logger import logger
 
 
-semantic_serialization.register_module(dialog.music_personality.ontology)
-config = yaml.load(open('dialog/mindtone/nlu_openai_config.yml'), yaml.Loader)
+semantic_serialization.register_module(bkos.music_personality.ontology)
+config = yaml.load(open(f'{Path(__file__).parent}/nlu_openai_config.yml'), yaml.Loader)
 
 
 def interpret(utterance):
