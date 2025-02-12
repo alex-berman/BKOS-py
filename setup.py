@@ -7,7 +7,7 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="bkos",
-    version="0.0.1",
+    version="1.0.0",
     description="Extensible explanatory dialogue system informed by theories of human argumentation, rhetoric and dialogue",
     long_description=long_description,
     long_description_content_type="text/markdown",
