@@ -16,5 +16,5 @@ setup(
     author_email="alexanander.berman@gu.se",
     packages=find_packages(),
     install_requires=open("requirements.txt").read().splitlines(),
-    python_requires=">=3.7, <4",
+    python_requires=">=3.9, <4",
 )
