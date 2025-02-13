@@ -14,7 +14,7 @@ class TestDialogs(object):
     @pytest.mark.parametrize('name,content', test_contents.items())
     def test_dialog(self, name, content):
         resources = {
-            'domain_class': hello_world.domain.DemoDomain,
+            'domain_class': hello_world.domain.HelloWorldDomain,
         }
         semantic_serialization.initialize()
         semantic_serialization.register_module(hello_world.ontology)

@@ -16,7 +16,7 @@ class TestDialogs(object):
     @pytest.mark.parametrize('name,content', test_contents.items())
     def test_dialog(self, name, content):
         resources = {
-            'domain_class': bkos.hello_world.domain.DemoDomain,
+            'domain_class': bkos.hello_world.domain.HelloWorldDomain,
             'nlu': bkos.hello_world.nlu,
             'nlg': bkos.hello_world.nlg,
         }

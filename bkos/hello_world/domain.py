@@ -4,7 +4,7 @@ from bkos.domain import Domain
 from bkos.hello_world.ontology import *
 
 
-class DemoDomain(Domain):
+class HelloWorldDomain(Domain):
     def __init__(self, resources, session_data):
         pass
 
