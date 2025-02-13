@@ -13,8 +13,9 @@ prompt: |
   - None: the input from the user does not match any of the above
 
   Question can be one of:
-  - Why(): bare why question
-  - Why(Proposition): explicit why question concerning a proposition
+  - Why(explanandum: Proposition = None, additional: bool = False):
+    - the explanandum is optional
+    - if additional=True, an additional explanation is requested
   - BooleanQuestion(Proposition): question concerning whether a proposition is true
   - WhQuestion(FactorConsidered): question concerning which factors the system considers
 
@@ -45,6 +46,8 @@ prompt: |
   why do you think this person likes silent music? -> Ask(Why(Not(HighValue(loudness_mean))))
   why do you think this person likes sad/depressed/angry music? -> Ask(Why(Not(HighValue(valence_mean))))
   why do you think this person likes happy/cheerful/euphoric music? -> Ask(Why(HighValue(valence_mean)))
+  any other reasons? -> Ask(Why(additional=True))
+  other reasons why you think this person is introverted? -> Ask(Why(Not(Extraverted()), additional=True))
   I don't understand -> ICM(understanding, negative)
   so what? -> ICM(understanding, negative)
   OK -> ICM(acceptance, positive)
