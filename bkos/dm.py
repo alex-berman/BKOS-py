@@ -38,7 +38,7 @@ def update_beliefs(state: DialogState):
             state.private.beliefs.append(belief)
 
 
-def select_assert(state: DialogState):
+def respond(state: DialogState):
     if len(state.private.agenda) > 0 and isinstance(state.private.agenda[0], Respond):
         agenda_item = state.private.agenda[0]
         excluded_propositions = state.shared.asserted if agenda_item.continuation else []
@@ -168,4 +168,4 @@ def update_and_select(state: DialogState):
     try_rule(state, reject_question_with_incompatible_presupposition)
     try_rule(state, reject_unanswerable_question)
     try_rule(state, update_beliefs)
-    try_rule(state, select_assert)
+    try_rule(state, respond)
