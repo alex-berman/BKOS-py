@@ -146,6 +146,30 @@ explicitly_ask_how_something_explains_something_when_this_is_the_case:
     - U Ask(Why(Explains(Not(HighValue(danceability_mean)), Not(Extraverted()))))
     - S Assert(Supports(Not(HighValue(danceability_mean)), Not(Extraverted())))
 
+explicitly_ask_how_something_explains_something_when_this_is_not_the_case:
+  facts:
+    predicted_extraversion_prob: 0.4
+    feature_values:
+      energy_mean: 0
+      danceability_mean: -0.1
+      valence_mean: 0
+    global_coefficients:
+      energy_mean: -0.6
+      danceability_mean: 0.1
+      valence_mean: 0.2
+    local_contributions:
+      energy_mean: 0
+      danceability_mean: -0.01
+      valence_mean: 0
+  turns:
+    - S OfferHelp()
+    - U Ask(BooleanQuestion(Extraverted()))
+    - S Disconfirm(Not(Extraverted()), medium)
+    - U Ask(Why())
+    - S Assert(Not(HighValue(danceability_mean)))
+    - U Ask(Why(Explains(Not(HighValue(danceability_mean)), Extraverted())))
+    - S ICM(acceptance, negative, Explains(Not(HighValue(danceability_mean)), Extraverted()))
+
 ignore_acknowledgement_from_user:
   facts:
     predicted_extraversion_prob: 0.4
