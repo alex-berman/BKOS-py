@@ -1,4 +1,4 @@
-prediction_introverted:
+disconfirmation_of_prediction:
   facts:
     predicted_extraversion_prob: 0.4
     feature_values:
@@ -10,7 +10,7 @@ prediction_introverted:
   turns:
     - S I think this person is introverted.
 
-prediction_extraverted:
+confirmation_of_prediction:
   facts:
     predicted_extraversion_prob: 0.6
     feature_values:
@@ -22,7 +22,7 @@ prediction_extraverted:
   turns:
     - S I think this person is extraverted.
 
-explanation_for_introverted_with_positive_coefficient:
+enthymematic_explanation_triggered_by_implicit_why_question:
   facts:
     predicted_extraversion_prob: 0.4
     feature_values:
@@ -41,66 +41,6 @@ explanation_for_introverted_with_positive_coefficient:
     - S I think this person is introverted.
     - U why?
     - S The person likes non-danceable music.
-
-explanation_for_introverted_with_negative_coefficient:
-  facts:
-    predicted_extraversion_prob: 0.4
-    feature_values:
-      energy_mean: 0.1
-      danceability_mean: 0
-      valence_mean: 0
-    global_coefficients:
-      energy_mean: -0.6
-      danceability_mean: 0.1
-      valence_mean: 0.2
-    local_contributions:
-      energy_mean: -0.6
-      danceability_mean: 0
-      valence_mean: 0
-  turns:
-    - S I think this person is introverted.
-    - U why?
-    - S The person likes high-energy music.
-
-explanation_for_extraverted_with_positive_coefficient:
-  facts:
-    predicted_extraversion_prob: 0.6
-    feature_values:
-      energy_mean: 0
-      danceability_mean: 0.1
-      valence_mean: 0
-    global_coefficients:
-      energy_mean: -0.6
-      danceability_mean: 0.1
-      valence_mean: 0.2
-    local_contributions:
-      energy_mean: 0
-      danceability_mean: 0.01
-      valence_mean: 0
-  turns:
-    - S I think this person is extraverted.
-    - U why?
-    - S The person likes danceable music.
-
-explanation_for_extraverted_with_negative_coefficient:
-  facts:
-    predicted_extraversion_prob: 0.6
-    feature_values:
-      energy_mean: -0.1
-      danceability_mean: 0
-      valence_mean: 0
-    global_coefficients:
-      energy_mean: -0.6
-      danceability_mean: 0.1
-      valence_mean: 0.2
-    local_contributions:
-      energy_mean: 0.6
-      danceability_mean: 0
-      valence_mean: 0
-  turns:
-    - S I think this person is extraverted.
-    - U why?
-    - S The person likes low-energy music.
 
 explanation_for_feature_value_judgement_introverted_with_positive_coefficient:
   facts:

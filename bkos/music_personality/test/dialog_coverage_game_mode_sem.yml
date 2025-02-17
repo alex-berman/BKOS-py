@@ -1,4 +1,4 @@
-prediction_introverted:
+disconfirmation_of_prediction:
   facts:
     predicted_extraversion_prob: 0.4
     feature_values:
@@ -10,7 +10,7 @@ prediction_introverted:
   turns:
     - S Disconfirm(Not(Extraverted()), medium)
 
-prediction_extraverted:
+confirmation_of_prediction:
   facts:
     predicted_extraversion_prob: 0.6
     feature_values:
@@ -22,7 +22,7 @@ prediction_extraverted:
   turns:
     - S Confirm(Extraverted(), medium)
 
-explanation_for_introverted_with_positive_coefficient:
+enthymematic_explanation_triggered_by_implicit_why_question:
   facts:
     predicted_extraversion_prob: 0.4
     feature_values:
@@ -41,7 +41,6 @@ explanation_for_introverted_with_positive_coefficient:
     - S Disconfirm(Not(Extraverted()), medium)
     - U Ask(Why())
     - S Assert(Not(HighValue(danceability_mean)))
-
 
 explanation_for_feature_value_judgement_introverted_with_positive_coefficient:
   facts:
