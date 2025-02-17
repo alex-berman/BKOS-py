@@ -42,7 +42,7 @@ enthymematic_explanation_triggered_by_implicit_why_question:
     - U Ask(Why())
     - S Assert(Not(HighValue(danceability_mean)))
 
-explanation_for_feature_value_judgement_introverted_with_positive_coefficient:
+reject_unanswerable_implicit_why_question_concerning_warrant:
   facts:
     predicted_extraversion_prob: 0.4
     feature_values:
