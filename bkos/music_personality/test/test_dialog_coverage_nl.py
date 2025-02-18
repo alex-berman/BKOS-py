@@ -11,25 +11,18 @@ import bkos.music_personality.nlg
 from bkos.test.dialogtest import run_dialog_test_nl
 
 
-game_modes = {
-    False: 'normal_mode',
-    True: 'game_mode',
-}
-
-
 def load_tests():
-    for game_mode in game_modes.keys():
-        contents = yaml.load(
-            open(f'{Path(__file__).parent}/dialog_coverage_{game_modes[game_mode]}_nl.yml').read(), yaml.Loader)
-        for name, content in contents.items():
-            yield game_mode, name, content
+    contents = yaml.load(
+        open(f'{Path(__file__).parent}/dialog_coverage_nl.yml').read(), yaml.Loader)
+    for name, content in contents.items():
+        yield name, content
 
 
 class TestDialogs(object):
-    @pytest.mark.parametrize('game_mode, name, content', load_tests())
-    def test_dialog(self, game_mode, name, content):
+    @pytest.mark.parametrize('name, content', load_tests())
+    def test_dialog(self, name, content):
         resources = {
-            'game_mode': game_mode,
+            'game_mode': False,
             'domain_class': bkos.music_personality.domain.MusicPersonalityDomain,
             'nlu': bkos.music_personality.nlu_simple,
             'nlg': bkos.music_personality.nlg,

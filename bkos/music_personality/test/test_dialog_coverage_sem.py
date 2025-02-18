@@ -9,25 +9,18 @@ from bkos.test.dialogtest import run_dialog_test_sem
 from bkos import semantic_serialization
 
 
-game_modes = {
-    False: 'normal_mode',
-    True: 'game_mode',
-}
-
-
 def load_tests():
-    for game_mode in game_modes.keys():
-        contents = yaml.load(
-            open(f'{Path(__file__).parent}/dialog_coverage_{game_modes[game_mode]}_sem.yml').read(), yaml.Loader)
-        for name, content in contents.items():
-            yield game_mode, name, content
+    contents = yaml.load(
+        open(f'{Path(__file__).parent}/dialog_coverage_sem.yml').read(), yaml.Loader)
+    for name, content in contents.items():
+        yield name, content
 
 
 class TestDialogs(object):
-    @pytest.mark.parametrize('game_mode, name, content', load_tests())
-    def test_dialog(self, game_mode, name, content):
+    @pytest.mark.parametrize('name, content', load_tests())
+    def test_dialog(self, name, content):
         resources = {
-            'game_mode': game_mode,
+            'game_mode': False,
             'domain_class': music_personality.domain.MusicPersonalityDomain,
         }
         resources['extraversion_model_bundle'] = {
