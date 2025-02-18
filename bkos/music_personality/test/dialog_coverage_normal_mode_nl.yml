@@ -179,8 +179,6 @@ explicitly_ask_why_introverted_when_this_is_predicted:
       danceability_mean: -0.01
   turns:
     - S How can I help?
-    - U Do you think this person is extraverted or introverted?
-    - S I think this person is introverted.
     - U why do you think this person is introverted?
     - S The person likes non-danceable music.
 
@@ -443,7 +441,7 @@ ignore_acknowledgement_from_user:
     - U why?
     - S The person likes high-energy music.
 
-user_question_about_factual_support_for_prediction:
+confirmation_of_support_for_prediction:
   facts:
     predicted_extraversion_prob: 0.4
     feature_values:
@@ -467,7 +465,7 @@ user_question_about_factual_support_for_prediction:
     - U does the fact that the person likes non-danceable music support the assessment that the person is introverted?
     - S Yes, I associate a preference for non-danceable music with being introverted.
 
-user_question_about_unfactual_support_for_prediction:
+disconfirmation_of_support_for_prediction:
   facts:
     predicted_extraversion_prob: 0.4
     feature_values:

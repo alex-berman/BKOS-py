@@ -132,7 +132,7 @@ ignore_acknowledgement_from_user:
     - U Ask(Why())
     - S Assert(HighValue(energy_mean))
 
-user_question_about_factual_support_for_prediction:
+confirmation_of_support_for_prediction:
   facts:
     predicted_extraversion_prob: 0.4
     feature_values:
@@ -154,7 +154,7 @@ user_question_about_factual_support_for_prediction:
     - U Ask(BooleanQuestion(Supports(Not(HighValue(danceability_mean)), Not(Extraverted()))))
     - S Confirm(Supports(Not(HighValue(danceability_mean)), Not(Extraverted())))
 
-user_question_about_unfactual_support_for_prediction:
+disconfirmation_of_support_for_prediction:
   facts:
     predicted_extraversion_prob: 0.4
     feature_values:
