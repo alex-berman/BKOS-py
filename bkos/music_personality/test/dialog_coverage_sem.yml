@@ -201,10 +201,6 @@ confirmation_of_support_for_prediction:
       valence_mean: 0
   turns:
     - S OfferHelp()
-    - U Ask(BooleanQuestion(Extraverted()))
-    - S Disconfirm(Not(Extraverted()), medium)
-    - U Ask(Why())
-    - S Assert(HighValue(energy_mean))
     - U Ask(BooleanQuestion(Supports(Not(HighValue(danceability_mean)), Not(Extraverted()))))
     - S Confirm(Supports(Not(HighValue(danceability_mean)), Not(Extraverted())))
 
@@ -225,10 +221,6 @@ disconfirmation_of_support_for_prediction:
       valence_mean: 0
   turns:
     - S OfferHelp()
-    - U Ask(BooleanQuestion(Extraverted()))
-    - S Disconfirm(Not(Extraverted()), medium)
-    - U Ask(Why())
-    - S Assert(HighValue(energy_mean))
     - U Ask(BooleanQuestion(Supports(Not(HighValue(danceability_mean)), Extraverted())))
     - S Disconfirm(Not(Supports(Not(HighValue(danceability_mean)), Extraverted())))
 
