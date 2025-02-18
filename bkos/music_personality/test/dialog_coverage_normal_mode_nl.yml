@@ -232,7 +232,7 @@ explicitly_ask_why_extraverted_when_this_is_not_predicted:
     - U why do you think this person is extraverted?
     - S No, I don't think this person is extraverted.
 
-explicitly_ask_how_something_explains_something_when_this_is_the_case:
+answer_explicit_why_question_concerning_explanation:
   facts:
     predicted_extraversion_prob: 0.4
     feature_values:
@@ -256,7 +256,7 @@ explicitly_ask_how_something_explains_something_when_this_is_the_case:
     - U how does liking non-danceable music explain being introverted?
     - S I associate a preference for non-danceable music with being introverted.
 
-explicitly_ask_how_something_explains_something_when_this_is_not_the_case:
+reject_explicit_why_question_concerning_false_explanation:
   facts:
     predicted_extraversion_prob: 0.4
     feature_values:

@@ -94,7 +94,7 @@ explicitly_ask_why_introverted_when_this_is_predicted:
     - U Ask(Why(Not(Extraverted())))
     - S Assert(Not(HighValue(danceability_mean)))
 
-explicitly_ask_how_something_explains_something_when_this_is_the_case:
+answer_explicit_why_question_concerning_explanation:
   facts:
     predicted_extraversion_prob: 0.4
     feature_values:

@@ -122,7 +122,7 @@ explicitly_ask_why_introverted_when_this_is_not_predicted:
     - U Ask(Why(Not(Extraverted())))
     - S ICM(acceptance, negative, Not(Extraverted()))
 
-explicitly_ask_how_something_explains_something_when_this_is_the_case:
+answer_explicit_why_question_concerning_explanation:
   facts:
     predicted_extraversion_prob: 0.4
     feature_values:
@@ -146,7 +146,7 @@ explicitly_ask_how_something_explains_something_when_this_is_the_case:
     - U Ask(Why(Explains(Not(HighValue(danceability_mean)), Not(Extraverted()))))
     - S Assert(Supports(Not(HighValue(danceability_mean)), Not(Extraverted())))
 
-explicitly_ask_how_something_explains_something_when_this_is_not_the_case:
+reject_explicit_why_question_concerning_false_explanation:
   facts:
     predicted_extraversion_prob: 0.4
     feature_values:
