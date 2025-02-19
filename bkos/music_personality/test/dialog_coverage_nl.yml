@@ -64,7 +64,7 @@ enthymematic_explanation_triggered_by_negative_understanding:
     - U I don't understand
     - S The person likes high-energy music.
 
-negative_system_understanding_for_contextless_why_question_from_user:
+negative_system_understanding_for_unresolvable_why_question:
   facts:
     predicted_extraversion_prob: 0.4
     feature_values:
@@ -76,6 +76,30 @@ negative_system_understanding_for_contextless_why_question_from_user:
   turns:
     - S How can I help?
     - U why?
+    - S Sorry, I don't understand.
+
+why_question_following_negative_understanding_triggers_negative_understanding:
+  facts:
+    predicted_extraversion_prob: 0.4
+    feature_values:
+      energy_mean: 0
+      danceability_mean: -0.1
+      valence_mean: 0
+    global_coefficients:
+      energy_mean: -0.6
+      danceability_mean: 0.1
+      valence_mean: 0.2
+    local_contributions:
+      energy_mean: 0
+      danceability_mean: -0.01
+      valence_mean: 0
+  turns:
+    - S How can I help?
+    - U why?
+    - S Sorry, I don't understand.
+    - U why
+    - S Sorry, I don't understand.
+    - U why
     - S Sorry, I don't understand.
 
 reject_unanswerable_implicit_why_question_concerning_warrant:
@@ -307,37 +331,6 @@ reject_explicit_why_question_concerning_false_explanation:
     - S The person likes non-danceable music.
     - U how does liking non-danceable music explain being extraverted?
     - S No, I don't associate a preference for non-danceable music with being extraverted.
-
-asking_why_system_does_not_know_why_etc:
-  facts:
-    predicted_extraversion_prob: 0.4
-    feature_values:
-      energy_mean: 0
-      danceability_mean: -0.1
-      valence_mean: 0
-    global_coefficients:
-      energy_mean: -0.6
-      danceability_mean: 0.1
-      valence_mean: 0.2
-    local_contributions:
-      energy_mean: 0
-      danceability_mean: -0.01
-      valence_mean: 0
-  turns:
-    - S How can I help?
-    - U Do you think this person is extraverted or introverted?
-    - S I think this person is introverted.
-    - U why?
-    - S The person likes non-danceable music.
-    - U so what
-    - S I associate a preference for non-danceable music with being introverted.
-    - U why
-    - S I cannot explain the reasons behind the patterns that I've learned.
-    - U why
-    - S Sorry, I don't understand.
-    - U why
-    - S Sorry, I don't understand.
-    - U why
 
 implicitly_ask_why_concerning_high_feature_value:
   facts:

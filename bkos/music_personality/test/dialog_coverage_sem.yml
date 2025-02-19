@@ -64,7 +64,7 @@ enthymematic_explanation_triggered_by_negative_understanding:
     - U ICM(understanding, negative)
     - S Assert(HighValue(energy_mean))
 
-negative_system_understanding_for_contextless_why_question_from_user:
+negative_system_understanding_for_unresolvable_why_question:
   facts:
     predicted_extraversion_prob: 0.4
     feature_values:
@@ -75,6 +75,22 @@ negative_system_understanding_for_contextless_why_question_from_user:
       energy_mean: -0.6
   turns:
     - S OfferHelp()
+    - U Ask(Why())
+    - S ICM(understanding, negative)
+
+why_question_following_negative_understanding_triggers_negative_understanding:
+  facts:
+    predicted_extraversion_prob: 0.4
+    feature_values:
+      energy_mean: 0.1
+    global_coefficients:
+      energy_mean: -0.6
+    local_contributions:
+      energy_mean: -0.6
+  turns:
+    - S OfferHelp()
+    - U Ask(Why())
+    - S ICM(understanding, negative)
     - U Ask(Why())
     - S ICM(understanding, negative)
 
