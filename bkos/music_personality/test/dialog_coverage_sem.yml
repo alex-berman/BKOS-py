@@ -277,8 +277,6 @@ acknowledge_user_assertions:
       energy_mean: -0.6
   turns:
     - S OfferHelp()
-    - U Ask(BooleanQuestion(Extraverted()))
-    - S Disconfirm(Not(Extraverted()), medium)
     - U Assert(Extraverted())
     - S ICM(acceptance, positive)
     - U Assert(Not(Extraverted()))
