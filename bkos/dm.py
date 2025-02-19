@@ -21,7 +21,7 @@ def emit_move_on_agenda(state: DialogState):
 
 
 def select_negative_understanding_icm(state: DialogState):
-    if state.user_input and state.user_input.move is None:
+    if state.user_input and (state.user_input.move is None or len(state.private.non_integrated_moves) > 0):
         yield True
         state.next_system_move = ICM(level=understanding, polarity=negative)
 
@@ -101,17 +101,14 @@ def integrate_user_ask(state: DialogState):
         if isinstance(move, Ask):
             if not (isinstance(move.question, Why) and move.question.explanandum) or is_compatible_with_beliefs(
                     move.question.explanandum, state.private.beliefs, state.domain):
-                yield True
-                move = state.private.non_integrated_moves.pop(0)
-                assert isinstance(move, Ask)
                 resolved_question = resolve_elliptical_question(move.question, state) if is_elliptical_question(move.question) \
                     else move.question
                 if resolved_question:
+                    yield True
+                    move = state.private.non_integrated_moves.pop(0)
                     state.shared.qud.insert(0, resolved_question)
                     continuation = (isinstance(move.question, Why) and move.question.additional)
                     state.private.agenda.insert(0, Respond(resolved_question, continuation=continuation))
-                else:
-                    state.next_system_move = ICM(understanding, negative)
 
 
 def integrate_user_negative_understanding(state: DialogState):
@@ -131,6 +128,14 @@ def integrate_user_negative_understanding(state: DialogState):
                 implicit_question = Why(state.previous_system_move.proposition)
                 state.shared.qud.insert(0, implicit_question)
                 state.private.agenda.insert(0, Respond(implicit_question))
+
+
+def integrate_user_positive_acceptance(state: DialogState):
+    if len(state.private.non_integrated_moves) > 0:
+        move = state.private.non_integrated_moves[0]
+        if isinstance(move, ICM) and move.level == acceptance and move.polarity == positive:
+            yield True
+            state.private.non_integrated_moves.pop(0)
 
 
 def acknowledge_user_assertion(state: DialogState):
@@ -161,11 +166,12 @@ def update_and_select(state: DialogState):
     logger.info('update_and_select', user_input=state.user_input)
     try_rule(state, get_latest_moves)
     try_rule(state, emit_move_on_agenda)
-    try_rule(state, select_negative_understanding_icm)
     try_rule(state, integrate_user_ask)
     try_rule(state, integrate_user_negative_understanding)
+    try_rule(state, integrate_user_positive_acceptance)
     try_rule(state, acknowledge_user_assertion)
     try_rule(state, reject_question_with_incompatible_presupposition)
     try_rule(state, reject_unanswerable_question)
     try_rule(state, update_beliefs)
     try_rule(state, respond)
+    try_rule(state, select_negative_understanding_icm)
