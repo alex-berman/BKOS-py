@@ -377,11 +377,11 @@ multiple_explanantia:
     - S Disconfirm(Not(Extraverted()), medium)
     - U Ask(Why())
     - S Assert(Not(HighValue(danceability_mean)))
-    - U Ask(Why(explanandum=None, additional=True))
+    - U RequestContinuation(Ask(Why()))
     - S Assert(HighValue(energy_mean))
-    - U Ask(Why(explanandum=None, additional=True))
+    - U RequestContinuation(Ask(Why()))
     - S Assert(Not(HighValue(valence_mean)))
-    - U Ask(Why(explanandum=None, additional=True))
+    - U RequestContinuation(Ask(Why()))
     - S ICM(acceptance, negative, NoAdditionalAnswers(Why(Not(Extraverted()))))
 
 negative_system_understanding_for_contextless_continuation_request_from_user:
@@ -395,7 +395,7 @@ negative_system_understanding_for_contextless_continuation_request_from_user:
       energy_mean: -0.6
   turns:
     - S OfferHelp()
-    - U Ask(Why(explanandum=None, additional=True))
+    - U Ask(Why())
     - S ICM(understanding, negative)
 
 sub_dialog:
@@ -421,9 +421,9 @@ sub_dialog:
     - S Assert(Not(HighValue(danceability_mean)))
     - U Ask(WhQuestion(FactorConsidered))
     - S Assert(And([FactorConsidered(energy_mean), FactorConsidered(mode_0_percentage), FactorConsidered(loudness_mean), FactorConsidered(speechiness_mean), FactorConsidered(instrumentalness_mean), FactorConsidered(valence_mean), FactorConsidered(danceability_mean)]))
-    - U Ask(Why(Not(Extraverted()), additional=True))
+    - U RequestContinuation(Ask(Why()))
     - S Assert(HighValue(energy_mean))
-    - U Ask(Why(explanandum=None, additional=True))
+    - U RequestContinuation(Ask(Why()))
     - S Assert(Not(HighValue(valence_mean)))
-    - U Ask(Why(explanandum=None, additional=True))
-    - S ICM(acceptance, negative, NoAdditionalAnswers(Why(Not(Extraverted()), additional=True)))
+    - U RequestContinuation(Ask(Why()))
+    - S ICM(acceptance, negative, NoAdditionalAnswers(Why(Not(Extraverted()))))

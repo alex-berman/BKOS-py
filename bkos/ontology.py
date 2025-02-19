@@ -124,7 +124,6 @@ class BooleanQuestion(Question):
 @dataclass
 class Why(Question):
     explanandum: Proposition = None
-    additional: bool = False
 
 
 @dataclass
@@ -140,6 +139,11 @@ class Ask(Move):
 @dataclass
 class OfferHelp(Move):
     pass
+
+
+@dataclass
+class RequestContinuation(Move):
+    content: Move
 
 
 class AnswerDeliveryStrategy(Enum):
@@ -161,7 +165,6 @@ class AgendaItem:
 @dataclass
 class Respond(AgendaItem):
     question: Question
-    continuation: bool = False
 
 
 @dataclass
@@ -174,6 +177,7 @@ class Private:
     agenda: list[AgendaItem] = field(default_factory=list)
     beliefs: list[Belief] = field(default_factory=list)
     non_integrated_moves: list[Move] = field(default_factory=list)
+    continuation: bool = False
 
 
 @dataclass

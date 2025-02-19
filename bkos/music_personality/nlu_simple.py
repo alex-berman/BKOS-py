@@ -42,30 +42,35 @@ def interpret(utterance_cased):
 
     extraversion_proposition = detect_extraversion_proposition()
     feature_value_judgement_proposition = detect_feature_value_judgement_proposition()
-    additional_reasons = ('other' in tokens and ('reason' in tokens or 'reasons' in tokens))
 
-    if 'why' in tokens:
-        if extraversion_proposition:
-            return Ask(Why(extraversion_proposition, additional=additional_reasons))
-        if feature_value_judgement_proposition:
-            return Ask(Why(feature_value_judgement_proposition))
-        return Ask(Why(additional=additional_reasons))
-    if 'how' in tokens and 'explain' in tokens:
-        move = try_interpret_as_why_question_concerning_explanation()
-        if move:
-            return move
-    if "don't understand" in utterance or 'so what' in utterance:
-        return ICM(understanding, negative)
-    if 'support' in tokens:
-        if extraversion_proposition and feature_value_judgement_proposition:
-                return Ask(BooleanQuestion(Supports(feature_value_judgement_proposition, extraversion_proposition)))
-    if 'think' in tokens and 'you' in tokens and extraversion_proposition:
-        return Ask(BooleanQuestion(extraversion_proposition))
-    if 'think' in tokens and 'i' in tokens and extraversion_proposition:
-        return Assert(extraversion_proposition)
-    if 'which factors' in utterance:
-        return Ask(WhQuestion(FactorConsidered))
-    if utterance == 'ok':
-        return ICM(acceptance, positive)
-    if additional_reasons:
-        return Ask(Why(explanandum=None, additional=True))
+    def interpret_first_order():
+        if 'why' in tokens:
+            if extraversion_proposition:
+                return Ask(Why(extraversion_proposition))
+            if feature_value_judgement_proposition:
+                return Ask(Why(feature_value_judgement_proposition))
+            return Ask(Why())
+        if 'how' in tokens and 'explain' in tokens:
+            move = try_interpret_as_why_question_concerning_explanation()
+            if move:
+                return move
+        if "don't understand" in utterance or 'so what' in utterance:
+            return ICM(understanding, negative)
+        if 'support' in tokens:
+            if extraversion_proposition and feature_value_judgement_proposition:
+                    return Ask(BooleanQuestion(Supports(feature_value_judgement_proposition, extraversion_proposition)))
+        if 'think' in tokens and 'you' in tokens and extraversion_proposition:
+            return Ask(BooleanQuestion(extraversion_proposition))
+        if 'think' in tokens and 'i' in tokens and extraversion_proposition:
+            return Assert(extraversion_proposition)
+        if 'which factors' in utterance:
+            return Ask(WhQuestion(FactorConsidered))
+        if utterance == 'ok':
+            return ICM(acceptance, positive)
+
+    first_order_move = interpret_first_order()
+    is_continuation_request = ('other' in tokens and ('reason' in tokens or 'reasons' in tokens))
+    if first_order_move:
+        return RequestContinuation(first_order_move) if is_continuation_request else first_order_move
+    elif is_continuation_request:
+        return RequestContinuation(Ask(Why()))

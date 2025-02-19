@@ -7,10 +7,20 @@ from bkos.isu import try_rule
 def get_latest_moves(state: DialogState):
     yield True
     state.private.non_integrated_moves = []
+    state.private.continuation = False
     state.shared.latest_moves = []
     if state.user_input and state.user_input.move:
         state.private.non_integrated_moves.append(state.user_input.move)
         state.shared.latest_moves.append(state.user_input.move)
+
+
+def integrate_continuation_request(state: DialogState):
+    if len(state.private.non_integrated_moves) > 0:
+        move = state.private.non_integrated_moves[0]
+        if isinstance(move, RequestContinuation):
+            yield True
+            state.private.continuation = True
+            state.private.non_integrated_moves[0] = move.content
 
 
 def emit_move_on_agenda(state: DialogState):
@@ -41,14 +51,14 @@ def update_beliefs(state: DialogState):
 def respond(state: DialogState):
     if len(state.private.agenda) > 0 and isinstance(state.private.agenda[0], Respond):
         agenda_item = state.private.agenda[0]
-        excluded_propositions = state.shared.asserted if agenda_item.continuation else []
+        excluded_propositions = state.shared.asserted if state.private.continuation else []
         question = agenda_item.question
         beliefs = [
             belief for belief in state.private.beliefs
             if is_relevant_answer(question, belief.proposition, state.domain) and \
                     belief.proposition not in excluded_propositions
         ]
-        if len(beliefs) > 0 or agenda_item.continuation:
+        if len(beliefs) > 0 or state.private.continuation:
             yield True
             state.private.agenda.pop(0)
             if len(beliefs) == 0:
@@ -107,8 +117,7 @@ def integrate_user_ask(state: DialogState):
                     yield True
                     move = state.private.non_integrated_moves.pop(0)
                     state.shared.qud.insert(0, resolved_question)
-                    continuation = (isinstance(move.question, Why) and move.question.additional)
-                    state.private.agenda.insert(0, Respond(resolved_question, continuation=continuation))
+                    state.private.agenda.insert(0, Respond(resolved_question))
 
 
 def integrate_user_negative_understanding(state: DialogState):
@@ -165,6 +174,7 @@ def reject_question_with_incompatible_presupposition(state: DialogState):
 def update_and_select(state: DialogState):
     logger.info('update_and_select', user_input=state.user_input)
     try_rule(state, get_latest_moves)
+    try_rule(state, integrate_continuation_request)
     try_rule(state, emit_move_on_agenda)
     try_rule(state, integrate_user_ask)
     try_rule(state, integrate_user_negative_understanding)

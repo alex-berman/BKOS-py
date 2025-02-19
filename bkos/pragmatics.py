@@ -13,7 +13,7 @@ def is_compatible_with_beliefs(proposition, beliefs, domain):
 
 def resolve_elliptical_question(question, state):
     if isinstance(question, Why):
-        if question.additional:
+        if state.private.continuation:
             for qud in state.shared.qud:
                 if isinstance(qud, Why):
                     return qud

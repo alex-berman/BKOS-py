@@ -34,10 +34,6 @@ instances = [
         Ask(BooleanQuestion(Extraverted()))
     ),
     (
-        "Ask(Why(explanandum=None, additional=True))",
-        Ask(Why(explanandum=None, additional=True))
-    ),
-    (
         "None",
         None
     )

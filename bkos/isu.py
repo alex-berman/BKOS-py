@@ -19,7 +19,7 @@ def try_rule(state: DialogState, rule: Rule):
 
             conditional = get_first_item()
             if conditional:
-                logger.info('preconditions true')
+                logger.info('preconditions true', rule=rule.__name__)
 
                 def apply_effects():
                     try:
