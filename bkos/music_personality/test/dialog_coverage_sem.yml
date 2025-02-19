@@ -48,6 +48,36 @@ enthymematic_explanation_triggered_by_implicit_why_question:
     - U Ask(Why())
     - S Assert(Not(HighValue(danceability_mean)))
 
+enthymematic_explanation_triggered_by_negative_understanding:
+  facts:
+    predicted_extraversion_prob: 0.4
+    feature_values:
+      energy_mean: 0.1
+    global_coefficients:
+      energy_mean: -0.6
+    local_contributions:
+      energy_mean: -0.6
+  turns:
+    - S OfferHelp()
+    - U Ask(BooleanQuestion(Extraverted()))
+    - S Disconfirm(Not(Extraverted()), medium)
+    - U ICM(understanding, negative)
+    - S Assert(HighValue(energy_mean))
+
+negative_system_understanding_for_contextless_why_question_from_user:
+  facts:
+    predicted_extraversion_prob: 0.4
+    feature_values:
+      energy_mean: 0.1
+    global_coefficients:
+      energy_mean: -0.6
+    local_contributions:
+      energy_mean: -0.6
+  turns:
+    - S OfferHelp()
+    - U Ask(Why())
+    - S ICM(understanding, negative)
+
 reject_unanswerable_implicit_why_question_concerning_warrant:
   facts:
     predicted_extraversion_prob: 0.4
@@ -309,36 +339,6 @@ prediction_introverted_weak_hedge:
     - S OfferHelp()
     - U Ask(BooleanQuestion(Extraverted()))
     - S Disconfirm(Not(Extraverted()), weak)
-
-negative_understanding_from_user_triggers_explanation:
-  facts:
-    predicted_extraversion_prob: 0.4
-    feature_values:
-      energy_mean: 0.1
-    global_coefficients:
-      energy_mean: -0.6
-    local_contributions:
-      energy_mean: -0.6
-  turns:
-    - S OfferHelp()
-    - U Ask(BooleanQuestion(Extraverted()))
-    - S Disconfirm(Not(Extraverted()), medium)
-    - U ICM(understanding, negative)
-    - S Assert(HighValue(energy_mean))
-
-negative_system_understanding_for_contextless_why_question_from_user:
-  facts:
-    predicted_extraversion_prob: 0.4
-    feature_values:
-      energy_mean: 0.1
-    global_coefficients:
-      energy_mean: -0.6
-    local_contributions:
-      energy_mean: -0.6
-  turns:
-    - S OfferHelp()
-    - U Ask(Why())
-    - S ICM(understanding, negative)
 
 multiple_explanantia:
   facts:

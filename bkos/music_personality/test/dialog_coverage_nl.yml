@@ -48,6 +48,36 @@ enthymematic_explanation_triggered_by_implicit_why_question:
     - U why?
     - S The person likes non-danceable music.
 
+enthymematic_explanation_triggered_by_negative_understanding:
+  facts:
+    predicted_extraversion_prob: 0.4
+    feature_values:
+      energy_mean: 0.1
+    global_coefficients:
+      energy_mean: -0.6
+    local_contributions:
+      energy_mean: -0.6
+  turns:
+    - S How can I help?
+    - U Do you think this person is extraverted or introverted?
+    - S I think this person is introverted.
+    - U I don't understand
+    - S The person likes high-energy music.
+
+negative_system_understanding_for_contextless_why_question_from_user:
+  facts:
+    predicted_extraversion_prob: 0.4
+    feature_values:
+      energy_mean: 0.1
+    global_coefficients:
+      energy_mean: -0.6
+    local_contributions:
+      energy_mean: -0.6
+  turns:
+    - S How can I help?
+    - U why?
+    - S Sorry, I don't understand.
+
 reject_unanswerable_implicit_why_question_concerning_warrant:
   facts:
     predicted_extraversion_prob: 0.4
@@ -542,36 +572,6 @@ prediction_introverted_weak_hedge:
     - S How can I help?
     - U Do you think this person is extraverted or introverted?
     - S If I had to guess, I'd say that this person is introverted.
-
-negative_understanding_from_user_triggers_explanation:
-  facts:
-    predicted_extraversion_prob: 0.4
-    feature_values:
-      energy_mean: 0.1
-    global_coefficients:
-      energy_mean: -0.6
-    local_contributions:
-      energy_mean: -0.6
-  turns:
-    - S How can I help?
-    - U Do you think this person is extraverted or introverted?
-    - S I think this person is introverted.
-    - U I don't understand
-    - S The person likes high-energy music.
-
-negative_system_understanding_for_contextless_why_question_from_user:
-  facts:
-    predicted_extraversion_prob: 0.4
-    feature_values:
-      energy_mean: 0.1
-    global_coefficients:
-      energy_mean: -0.6
-    local_contributions:
-      energy_mean: -0.6
-  turns:
-    - S How can I help?
-    - U why?
-    - S Sorry, I don't understand.
 
 multiple_explanantia:
   facts:
