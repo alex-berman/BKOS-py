@@ -8,10 +8,8 @@ def get_latest_moves(state: DialogState):
     yield True
     state.private.non_integrated_moves = []
     state.private.continuation = False
-    state.shared.latest_moves = []
     if state.user_input and state.user_input.move:
         state.private.non_integrated_moves.append(state.user_input.move)
-        state.shared.latest_moves.append(state.user_input.move)
 
 
 def integrate_continuation_request(state: DialogState):

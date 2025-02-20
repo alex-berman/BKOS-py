@@ -182,7 +182,6 @@ class Private:
 
 @dataclass
 class Shared:
-    latest_moves: list[Move] = field(default_factory=list)
     qud: list[Question] = field(default_factory=list)
     asserted: list[Proposition] = field(default_factory=list)
 
