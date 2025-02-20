@@ -427,3 +427,19 @@ sub_dialog:
     - S Assert(Not(HighValue(valence_mean)))
     - U RequestContinuation(Ask(Why()))
     - S ICM(acceptance, negative, NoAdditionalAnswers(Why(Not(Extraverted()))))
+
+previous_unresolvable_question_does_not_block_response_for_answerable_question:
+  facts:
+    predicted_extraversion_prob: 0.4
+    feature_values:
+      energy_mean: 0.1
+    global_coefficients:
+      energy_mean: -0.6
+    local_contributions:
+      energy_mean: -0.6
+  turns:
+    - S OfferHelp()
+    - U Ask(Why())
+    - S ICM(understanding, negative)
+    - U Ask(BooleanQuestion(Extraverted()))
+    - S Disconfirm(Not(Extraverted()), medium)
