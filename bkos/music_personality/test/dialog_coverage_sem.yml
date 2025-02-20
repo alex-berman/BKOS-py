@@ -395,7 +395,7 @@ negative_system_understanding_for_contextless_continuation_request_from_user:
       energy_mean: -0.6
   turns:
     - S OfferHelp()
-    - U Ask(Why())
+    - U RequestContinuation(Ask(Why()))
     - S ICM(understanding, negative)
 
 sub_dialog:
