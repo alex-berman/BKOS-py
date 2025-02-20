@@ -1,3 +1,5 @@
+import readline # noqa
+
 from bkos import bot
 from bkos.ontology import UserInput
 import bkos.hello_world.domain
