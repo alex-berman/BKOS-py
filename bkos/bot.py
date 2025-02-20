@@ -5,7 +5,7 @@ from bkos import dm
 from bkos.logger import logger
 
 
-def initiate_dialog_state(resources, session_data):
+def initiate_dialog_state(resources, session_data=None):
     state = DialogState()
     state.user_input = None
     state.domain = resources['domain_class'](resources, session_data)
