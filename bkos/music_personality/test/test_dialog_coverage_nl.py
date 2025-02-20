@@ -5,9 +5,7 @@ import pytest
 from pathlib import Path
 
 from bkos import bot
-import bkos.music_personality.domain
-import bkos.music_personality.nlu_simple
-import bkos.music_personality.nlg
+import bkos.music_personality.config
 from bkos.test.dialogtest import run_dialog_test_nl
 
 
@@ -21,12 +19,7 @@ def load_tests():
 class TestDialogs(object):
     @pytest.mark.parametrize('name, content', load_tests())
     def test_dialog(self, name, content):
-        resources = {
-            'game_mode': False,
-            'domain_class': bkos.music_personality.domain.MusicPersonalityDomain,
-            'nlu': bkos.music_personality.nlu_simple,
-            'nlg': bkos.music_personality.nlg,
-        }
+        resources = bkos.music_personality.config.resources
         resources['extraversion_model_bundle'] = {
             'model': MagicMock(),
             'scaler': MagicMock(),
