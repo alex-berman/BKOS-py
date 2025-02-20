@@ -7,6 +7,7 @@ from bkos.isu import try_rule
 def get_latest_moves(state: DialogState):
     yield True
     state.private.non_integrated_moves = []
+    state.private.non_integrated_goals = []
     if state.user_input and state.user_input.move:
         state.private.non_integrated_moves.append(state.user_input.move)
 
