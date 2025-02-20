@@ -11,9 +11,9 @@ def is_compatible_with_beliefs(proposition, beliefs, domain):
         return proposition.explanans in supporting_propositions
 
 
-def resolve_elliptical_question(question, state):
-    if isinstance(question, Why):
-        if state.private.continuation:
+def resolve_elliptical_question(goal, state):
+    if isinstance(goal.question, Why):
+        if goal.continuation:
             for qud in state.shared.qud:
                 if isinstance(qud, Why):
                     return qud

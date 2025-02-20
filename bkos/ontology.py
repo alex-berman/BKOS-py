@@ -164,7 +164,7 @@ class AgendaItem:
 
 @dataclass
 class Respond(AgendaItem):
-    question: Question
+    goal: Goal
 
 
 @dataclass
@@ -177,6 +177,12 @@ class Private:
     agenda: list[AgendaItem] = field(default_factory=list)
     beliefs: list[Belief] = field(default_factory=list)
     non_integrated_moves: list[Move] = field(default_factory=list)
+    non_integrated_goals: list[Goal] = field(default_factory=list)
+
+
+@dataclass
+class Goal:
+    question: Question
     continuation: bool = False
 
 
