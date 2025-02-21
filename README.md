@@ -12,10 +12,10 @@ Berman, A. (2024). [Argumentative Dialogue As Basis For Human-AI Collaboration](
 BKOS has been tested with Python >= 3.8.
 
 # Installation
-It is recommended to install and use BKOS inside a virtual environment, e.g. with virtualenv or conda. Then, install the requirements with
+It is recommended to install and use BKOS inside a virtual environment, e.g. with virtualenv or conda. Then, install BKOS with
 
 ```commandline
-pip install -r requirements.txt
+pip install .
 ```
 
 # Domains
@@ -31,5 +31,5 @@ pytest .
 This repo contains a very simple "hello world" demo which can be tested in the command line by running
 
 ```commandline
-python -m bkos.interact
+bkos interact
 ```

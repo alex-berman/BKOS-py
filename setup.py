@@ -18,4 +18,10 @@ setup(
     install_requires=open("requirements.txt").read().splitlines(),
     python_requires=">=3.9, <4",
     include_package_data=True,
+    py_modules=["bkos.cli"],
+    entry_points={
+        "console_scripts": [
+            "bkos=bkos.cli:main",
+        ]
+    },
 )
