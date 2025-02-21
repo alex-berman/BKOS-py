@@ -18,7 +18,8 @@ if __name__ == "__main__":
     resources = config.resources
     state = bot.initiate_dialog_state(resources, config.session_data)
     while True:
-        system_utterance = bot.get_response(resources, state)
+        response = bot.get_response(resources, state)
+        system_utterance = '' if response is None else response
         print(f'S: {system_utterance}')
         user_utterance = input('U: ')
         state.user_input = UserInput(utterance=user_utterance)
