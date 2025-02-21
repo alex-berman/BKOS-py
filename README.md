@@ -6,7 +6,9 @@ Berman, A. and S. Larsson (2025, in prep). Assessing Conversational Capabilities
 
 An earlier version of the central concepts and ideas in BKOS is described in the following papers:
 
-Berman, A. (2024). [Argumentative Dialogue As Basis For Human-AI Collaboration](https://ceur-ws.org/Vol-3825/short3-2.pdf). In _Proceedings of the Communication in Human-AI Interaction Workshop (CHAI-2024)_.
+Berman, A. (2024). [Argumentative Dialogue As Basis For Human-AI Collaboration](https://ceur-ws.org/Vol-3825/short3-2.pdf). In *Proceedings of the Communication in Human-AI Interaction Workshop (CHAI-2024)*.
+
+The name BKOS, pronounced as "because", extends the notion of KoS (conversation oriented semantics; see J. Ginzburg, Semantics for Conversation, 2008).
 
 # Requirements
 BKOS has been tested with Python >= 3.8.
@@ -27,8 +29,10 @@ The domains contain coverage tests which documented supported dialogue behaviour
 ```commandline
 pytest .
 ```
-# Demo
-This repo contains a very simple "hello world" demo which can be tested in the command line by running
+# Demos
+For a web-based demo, see https://dev.clasp.gu.se/mindtone/
+
+This repo also contains a very simple "hello world" demo which can be tested in the command line by running
 
 ```commandline
 bkos interact
