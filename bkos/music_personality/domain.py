@@ -57,9 +57,14 @@ class MusicPersonalityDomain(Domain):
         def get_support_for_prediction(extraverted):
             feature_vector = self.featurize()
             local_contributions = self._explainer.local_contributions(self._model, self._features, feature_vector)
-            comparison_function = (lambda feature_name: -local_contributions[feature_name]) if extraverted == 1 \
-                else (lambda feature_name: local_contributions[feature_name])
-            features_ranked_by_contribution = sorted(local_contributions.keys(), key=comparison_function)
+            filter_function = lambda feature_name: (local_contributions[feature_name] > 0 if extraverted == 1
+                                                    else local_contributions[feature_name] < 0)
+            filtered_contributions = [
+                feature_name for feature_name in local_contributions.keys()
+                if filter_function(feature_name)]
+            comparison_function = lambda feature_name: (-local_contributions[feature_name] if extraverted == 1
+                                                        else local_contributions[feature_name])
+            features_ranked_by_contribution = sorted(filtered_contributions, key=comparison_function)
             for feature_name in features_ranked_by_contribution:
                 coefficient = self._explainer.global_coefficients(self._model, self._features)[feature_name]
                 positive = True if (coefficient > 0 and extraverted == 1) or (

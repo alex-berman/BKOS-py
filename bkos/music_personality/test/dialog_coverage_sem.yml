@@ -360,17 +360,20 @@ multiple_explanantia:
   facts:
     predicted_extraversion_prob: 0.4
     feature_values:
-      energy_mean: 0
+      energy_mean: 0.5
       danceability_mean: -0.1
-      valence_mean: 0
+      valence_mean: -0.1
+      loudness_mean: 0.2
     global_coefficients:
-      energy_mean: -0.6
-      danceability_mean: 0.1
-      valence_mean: 0.2
+      energy_mean: -0.2
+      danceability_mean: 2
+      valence_mean: 0.5
+      loudness_mean: -1
     local_contributions:
-      energy_mean: 0
+      energy_mean: -0.1
       danceability_mean: -0.2
-      valence_mean: 0
+      valence_mean: -0.05
+      loudness_mean: 0.1
   turns:
     - S OfferHelp()
     - U Ask(BooleanQuestion(Extraverted()))
@@ -402,17 +405,20 @@ sub_dialog:
   facts:
     predicted_extraversion_prob: 0.4
     feature_values:
-      energy_mean: 0
+      energy_mean: 0.5
       danceability_mean: -0.1
-      valence_mean: 0
+      valence_mean: -0.1
+      loudness_mean: 0.2
     global_coefficients:
-      energy_mean: -0.6
-      danceability_mean: 0.1
-      valence_mean: 0.2
+      energy_mean: -0.2
+      danceability_mean: 2
+      valence_mean: 0.5
+      loudness_mean: -1
     local_contributions:
-      energy_mean: 0
+      energy_mean: -0.1
       danceability_mean: -0.2
-      valence_mean: 0
+      valence_mean: -0.05
+      loudness_mean: 0.1
   turns:
     - S OfferHelp()
     - U Ask(BooleanQuestion(Extraverted()))
