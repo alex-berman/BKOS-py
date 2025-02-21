@@ -1,4 +1,4 @@
-from bkos.music_personality.ontology import *
+from bkos.music_personality.types import *
 from bkos.music_personality.nl import feature_np
 from bkos.music_personality.audio_features import AUDIO_FEATURES
 

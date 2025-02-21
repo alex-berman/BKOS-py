@@ -4,7 +4,7 @@ import pytest
 
 from bkos.pragmatics import is_relevant_answer
 from bkos import music_personality
-from bkos.music_personality.ontology import *
+from bkos.music_personality.types import *
 
 
 class TestPragmatics(object):

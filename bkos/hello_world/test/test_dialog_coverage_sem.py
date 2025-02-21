@@ -17,5 +17,5 @@ class TestDialogs(object):
             'domain_class': hello_world.domain.HelloWorldDomain,
         }
         semantic_serialization.initialize()
-        semantic_serialization.register_module(hello_world.ontology)
+        semantic_serialization.register_module(hello_world.types)
         run_dialog_test_sem(bot, resources, content['turns'])

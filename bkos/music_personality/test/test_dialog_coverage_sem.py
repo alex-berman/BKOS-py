@@ -41,5 +41,5 @@ class TestDialogs(object):
         if 'local_contributions' in facts:
             resources['explainer'].local_contributions.return_value = facts['local_contributions']
         semantic_serialization.initialize()
-        semantic_serialization.register_module(music_personality.ontology)
+        semantic_serialization.register_module(music_personality.types)
         run_dialog_test_sem(bot, resources, content['turns'], session_data)

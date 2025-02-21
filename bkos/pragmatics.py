@@ -1,4 +1,4 @@
-from bkos.ontology import *
+from bkos.types import *
 from bkos.semantics import negate_proposition
 
 

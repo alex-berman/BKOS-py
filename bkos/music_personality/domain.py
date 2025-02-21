@@ -1,8 +1,8 @@
 from typing import List
 
 from bkos.domain import Domain
-from bkos.music_personality import ontology
-from bkos.music_personality.ontology import *
+from bkos.music_personality import types
+from bkos.music_personality.types import *
 
 
 class MusicPersonalityDomain(Domain):
@@ -69,7 +69,7 @@ class MusicPersonalityDomain(Domain):
                 coefficient = self._explainer.global_coefficients(self._model, self._features)[feature_name]
                 positive = True if (coefficient > 0 and extraverted == 1) or (
                         coefficient <= 0 and extraverted == 0) else False
-                positive_proposition = HighValue(getattr(ontology, feature_name))
+                positive_proposition = HighValue(getattr(types, feature_name))
                 yield positive_proposition if positive else Not(positive_proposition)
 
         if proposition == Extraverted():

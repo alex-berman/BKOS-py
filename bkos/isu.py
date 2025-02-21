@@ -1,7 +1,7 @@
 from typing import Callable, Any
 from types import GeneratorType
 
-from bkos.ontology import DialogState
+from bkos.types import DialogState
 from bkos.logger import logger
 
 

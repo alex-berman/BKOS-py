@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List
 
-from bkos.ontology import AgendaItem, Belief, AnswerDeliveryStrategy, Question
+from bkos.types import AgendaItem, Belief, AnswerDeliveryStrategy, Question
 
 
 class Domain(ABC):

@@ -1,6 +1,6 @@
 import pytest
 
-from bkos.ontology import *
+from bkos.types import *
 from bkos.semantic_serialization import deserialize
 
 

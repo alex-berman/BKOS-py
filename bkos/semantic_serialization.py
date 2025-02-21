@@ -2,7 +2,7 @@ import ast
 import inspect
 from typing import TypeVar
 
-import bkos.ontology
+import bkos.types
 
 
 permitted_classes = None
@@ -14,7 +14,7 @@ def register_module(module):
     for name in vars(module).keys():
         value = getattr(module, name)
         if inspect.isclass(value):
-            if issubclass(value, bkos.ontology.SemanticClass):
+            if issubclass(value, bkos.types.SemanticClass):
                 permitted_classes[name] = value
         elif isinstance(value, TypeVar):
             permitted_type_vars[name] = value
@@ -24,7 +24,7 @@ def initialize():
     global permitted_classes, permitted_type_vars
     permitted_classes = {}
     permitted_type_vars = {}
-    register_module(bkos.ontology)
+    register_module(bkos.types)
 
 
 initialize()

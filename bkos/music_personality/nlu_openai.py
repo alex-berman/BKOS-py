@@ -3,12 +3,12 @@ import yaml
 import openai
 from pathlib import Path
 
-import bkos.music_personality.ontology
+import bkos.music_personality.types
 from bkos import semantic_serialization
 from bkos.logger import logger
 
 
-semantic_serialization.register_module(bkos.music_personality.ontology)
+semantic_serialization.register_module(bkos.music_personality.types)
 config = yaml.load(open(f'{Path(__file__).parent}/nlu_openai_config.yml'), yaml.Loader)
 
 

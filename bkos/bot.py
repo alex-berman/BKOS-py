@@ -1,6 +1,6 @@
 from dataclass_wizard import asdict
 
-from bkos.ontology import DialogState
+from bkos.types import DialogState
 from bkos import dm
 from bkos.logger import logger
 

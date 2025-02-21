@@ -1,4 +1,4 @@
-from bkos.ontology import *
+from bkos.types import *
 
 
 def is_elliptical_question(question):

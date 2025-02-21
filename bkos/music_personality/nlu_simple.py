@@ -1,5 +1,5 @@
-from bkos.music_personality import ontology
-from bkos.music_personality.ontology import *
+from bkos.music_personality import types
+from bkos.music_personality.types import *
 from bkos.music_personality.audio_features import AUDIO_FEATURES
 
 
@@ -22,10 +22,10 @@ def interpret(utterance_cased):
             for feature in AUDIO_FEATURES:
                 score = get_score_for_substring_match(utterance, feature['positive_label'])
                 if score:
-                    yield HighValue(getattr(ontology, feature['name'])), score
+                    yield HighValue(getattr(types, feature['name'])), score
                 score = get_score_for_substring_match(utterance, feature['negative_label'])
                 if score:
-                    yield Not(HighValue(getattr(ontology, feature['name']))), score
+                    yield Not(HighValue(getattr(types, feature['name']))), score
 
         scored_interpretations = list(get_scored_interpretations())
         if len(scored_interpretations) > 0:

@@ -4,7 +4,7 @@ import argparse
 import importlib
 
 from bkos import bot
-from bkos.ontology import UserInput
+from bkos.types import UserInput
 
 
 def interact(config):

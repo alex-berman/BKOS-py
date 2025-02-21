@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from bkos.ontology import *
+from bkos.types import *
 
 
 AudioFeature = Sort('AudioFeature')
