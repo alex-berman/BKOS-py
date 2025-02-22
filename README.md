@@ -2,7 +2,7 @@ BKOS is an extensible explanatory dialogue system informed by theories of human 
 
 The system's dialogue capabilities are described in the following paper:
 
-Berman, A. and S. Larsson (2025, in prep). Assessing Conversational Capabilities of Explanatory AI Interfaces. In _Proceedings of the International Conference on Artificial Intelligence in HCI, Held as Part of HCI International 2025.
+Berman, A. and S. Larsson (2025, in prep). Assessing Conversational Capabilities of Explanatory AI Interfaces. In *Proceedings of the International Conference on Artificial Intelligence in HCI, Held as Part of HCI International 2025*.
 
 An earlier version of the central concepts and ideas in BKOS is described in the following papers:
 
