@@ -8,7 +8,7 @@ An earlier version of the central concepts and ideas in BKOS is described in the
 
 Berman, A. (2024). [Argumentative Dialogue As Basis For Human-AI Collaboration](https://ceur-ws.org/Vol-3825/short3-2.pdf). In *Proceedings of the Communication in Human-AI Interaction Workshop (CHAI-2024)*.
 
-The name BKOS, pronounced as "because", extends the notion of KoS (conversation oriented semantics; see J. Ginzburg, Semantics for Conversation, 2008).
+The name BKOS combines the word "because" with the notion of KoS (conversation oriented semantics; see J. Ginzburg, Semantics for Conversation, 2008).
 
 # Requirements
 BKOS has been tested with Python >= 3.8.
