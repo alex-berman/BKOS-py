@@ -15,5 +15,3 @@ class Domain(ABC):
 
     def answer_delivery_strategy(self, question: Question) -> AnswerDeliveryStrategy:
         return AnswerDeliveryStrategy.SINGLE_TURN
-
-    dependencies = {}

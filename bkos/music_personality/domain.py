@@ -30,11 +30,6 @@ class MusicPersonalityDomain(Domain):
         return ([Belief(FactorConsidered(audio_feature)) for audio_feature in factors_considered] +
                 [self.get_extraversion_belief(self.featurize())])
 
-    dependencies = {
-        Extraverted: {HighValue},
-        HighValue: {HigherThanAverage}
-    }
-
     def featurize(self):
         feature_value_dict = self._case_info['feature_values']
         unscaled_feature_vector = [

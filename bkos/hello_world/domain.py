@@ -14,10 +14,6 @@ class HelloWorldDomain(Domain):
     def initial_beliefs(self) -> List[Belief]:
         return [Belief(Not(LoanApplicationApproved())), Belief(IncomeBelowThreshold())]
 
-    dependencies = {
-        LoanApplicationApproved: {IncomeBelowThreshold}
-    }
-
     def get_support(self, proposition):
         if proposition == Not(LoanApplicationApproved()):
             yield IncomeBelowThreshold()

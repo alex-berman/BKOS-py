@@ -37,8 +37,6 @@ def get_answers(question, beliefs, domain):
 
 
 def is_relevant_answer(question, proposition, domain):
-    if isinstance(proposition, Not):
-        return is_relevant_answer(question, proposition.content, domain)
     if isinstance(question, BooleanQuestion):
         if isinstance(question.proposition, Not):
             return is_relevant_answer(BooleanQuestion(question.proposition.content), proposition, domain)
@@ -49,20 +47,17 @@ def is_relevant_answer(question, proposition, domain):
     if isinstance(question, WhQuestion):
         return isinstance(proposition, question.predicate)
     if isinstance(question, Why):
-        if isinstance(question.explanandum, Not):
-            return is_relevant_answer(Why(question.explanandum.content), proposition, domain)
-        if depends(question.explanandum.__class__, proposition.__class__, domain):
-            return True
+        for supporting_proposition in domain.get_support(question.explanandum):
+            if supporting_proposition == proposition:
+                return True
         if isinstance(question.explanandum, Explains) and isinstance(proposition, Supports):
             explains = question.explanandum
             for supporting_proposition in domain.get_support(explains.explanandum):
                 if supporting_proposition == explains.explanans:
                     return True
+    if isinstance(proposition, Not):
+        return is_relevant_answer(question, proposition.content, domain)
 
-
-def depends(semantic_class, dependent_semantic_class, domain):
-    if semantic_class in domain.dependencies:
-        return dependent_semantic_class in domain.dependencies[semantic_class]
 
 
 def select_explanations(explanandum, beliefs, domain):
