@@ -30,10 +30,16 @@ The domains contain coverage tests which documented supported dialogue behaviour
 pytest .
 ```
 # Demos
-For a web-based demo, see https://dev.clasp.gu.se/mindtone/
+For a web-based demo, see the game [MindTone](https://dev.clasp.gu.se/mindtone/), revolving around estimating persons' personality based on their music preferences. A minimal version of MindTone can be tested in the command line by running
+
+```commandline
+bkos interact bkos.music_personality.config
+```
+
+Note that the minimal version only supports a single case, without any gaming elements.
 
 This repo also contains a very simple "hello world" demo which can be tested in the command line by running
 
 ```commandline
-bkos interact
+bkos interact bkos.hello_world.config
 ```

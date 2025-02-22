@@ -20,10 +20,10 @@ def interact(config):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--config", default="bkos.hello_world.config")
     parser.add_argument("--log-level", default=logging.WARNING)
     subparsers = parser.add_subparsers(dest="command", required=True, help="Available commands")
     interact_parser = subparsers.add_parser('interact', help='Run interaction')
+    interact_parser.add_argument("config")
     interact_parser.set_defaults(func=interact)
     args = parser.parse_args()
 
