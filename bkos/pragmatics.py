@@ -47,14 +47,12 @@ def is_relevant_answer(question, proposition, domain):
     if isinstance(question, WhQuestion):
         return isinstance(proposition, question.predicate)
     if isinstance(question, Why):
-        for supporting_proposition in domain.get_support(question.explanandum):
-            if supporting_proposition == proposition:
-                return True
+        if proposition in domain.get_support(question.explanandum):
+            return True
         if isinstance(question.explanandum, Explains) and isinstance(proposition, Supports):
             explains = question.explanandum
-            for supporting_proposition in domain.get_support(explains.explanandum):
-                if supporting_proposition == explains.explanans:
-                    return True
+            if explains.explanans in domain.get_support(explains.explanandum):
+                return True
     if isinstance(proposition, Not):
         return is_relevant_answer(question, proposition.content, domain)
 
