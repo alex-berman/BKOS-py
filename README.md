@@ -61,7 +61,7 @@ pip install .
 The repo contains two example domains (use cases): `hello_world` (minimal loan application scenario with pre-determined prediction and explanation) and `music_personality` (more elaborate scenario involving prediction of personality from music preferences).
 
 # Automated testing
-The domains contain coverage tests which documented supported dialogue behaviours. The tests can be run as follows:
+The domains contain coverage tests (see examples [here](bkos/music_personality/test/dialog_coverage_nl.yml)) which documented supported dialogue behaviours. All tests in this repo can be run as follows:
 
 ```commandline
 pytest .
