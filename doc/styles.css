@@ -1,0 +1,36 @@
+html *
+{
+   font-family: Helvetica !important;
+   color: black;
+}
+
+.container {
+  width: 500px;
+}
+
+.utterance_bubble {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.utterance_container_U {
+    padding-left: 10%;
+}
+
+.utterance_container_S {
+    width: 90%;
+}
+
+.background_S {
+    background-color: #a1bae3;
+}
+
+.background_U {
+    background-color: #aac4a5;
+}
+
+.utterance {
+    padding: 10px;
+}

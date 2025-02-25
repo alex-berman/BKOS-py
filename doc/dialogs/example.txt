@@ -1,0 +1,7 @@
+S: I think this person is introverted.
+U: Why?
+S: The person likes high-energy music.
+U: I don’t understand
+S: I associate a preference for high-energy music with being introverted.
+U: OK, I see. Why do you think this person likes music with high energy?
+S: Music heard by the person has a higher average score for energy than music in general.
