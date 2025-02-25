@@ -3,27 +3,99 @@ BKOS is a dialogue engine and toolkit for developing **conversationally explaina
 # Example
 Below is an example of a supported dialogue between a user (U) and the BKOS system (S) in the context of using a statistical model (in this case logistic regression) to predict an individual's personality on the basis of her music preferences.
 
-| S | I think this person is introverted. |
-| U | Why |
+```
+S: I think this person is introverted.
+U: Why?
+S: The person likes high-energy music.
+U: I don’t understand
+S: I associate a preference for high-energy music with being introverted.
+U: OK, I see. Why do you think this person likes music with high energy?
+S: Music heard by the person has a higher average score for energy than
+   music in general.
+```
 
 # Unique capabilities
-BKOS supports the following dialogue capabilities:
+BKOS supports the following dialogue capabilities, all of which, as far as I know, are unique when compared with other dialogue-based XAI solutions.
 
+## ✅ Nested explanations
+BKOS is capable of explaining its own explanation, when requested by the user.
 
-## Nested explanations
+```
+S: I think this person is introverted.
+U: Why?
+S: The person likes high-energy music.
+U: Why do you think so?
+S: Music heard by the person has a higher average score for energy than
+   music in general.
+```
 
-## Negative understanding feedback
+## ✅ Negative understanding feedback
+Negative understanding feedback from the user (e.g. "I don't understand", "so what?") causes BKOS to context-dependently elaborate its reasoning.
 
-## Presupposition violations
+```
+S: I think this person is introverted.
+U: I don't understand
+S: The person likes non-danceable music.
+U: so what?
+S: I associate a preference for non-danceable music with being introverted.
+```
 
-## Yes-no questions
+## ✅ Presupposition violations
+If the user's utterance presupposes a false claim, BKOS denies the presupposed content.
 
-## Acknowledgement
+```
+U: why do think the person is extraverted?
+S: No, I don't think this person is extraverted.
+```
 
-## Additional information
+```
+U: how does liking non-danceable music explain being extraverted?
+S: No, I don't associate a preference for non-danceable music.
+```
+
+```
+U: why do you think this person likes non-danceable music?
+S: No, I don't think this person likes non-danceable music.
+```
+
+## ✅ Yes-no questions
+BKOS is capable of answering yes-no questions from the user.
+
+```
+U: does the fact that the person likes non-danceable music support the
+   assessment that the person is introverted?
+S: Yes, I associate a preference for non-danceable music with being
+   introverted.
+```
+
+## ✅ Additional information
+BKOS can deliver answers in chunks, and gives feedback if the user continues requesting additional information when no more chunks are available.
+
+```
+S: I think this person is introverted.
+U: why?
+S: The person likes non-danceable music.
+U: any other reasons?
+S: The person likes high-energy music.
+U: other reasons?
+S: The person likes sad/depressed/angry music.
+U: other reasons?
+S: I don't see any other reasons to believe that the person is introverted.
+```
+
+## ✅ Acknowledgement
+BKOS silently accommodates acknowledgements from the user.
+
+```
+S: I think this person is introverted.
+U: ok
+S: (utters nothing)
+U: why?
+S: The person likes high-energy music.    
+```
 
 # Publications
-A comparison between BKOS and two other conversationally explainable AI interfaces (TalkToModel and Glass-Box):
+Comparison of dialogue capabilities of BKOS and two other conversationally explainable AI interfaces (TalkToModel and Glass-Box):
 
 * Berman, A. and S. Larsson (2025, in prep). Assessing Conversational Capabilities of Explanatory AI Interfaces. In *Proceedings of the International Conference on Artificial Intelligence in HCI, Held as Part of HCI International 2025*. 
 
