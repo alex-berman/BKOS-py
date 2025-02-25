@@ -1,4 +1,4 @@
-BKOS is a dialogue engine and toolkit for developing **conversationally explainable AI (XAI) interfaces**. BKOS is informed by theories of human argumentation, rhetoric and dialogue, and has several **unique capabilities** when compared with other dialogue-based XAI systems.
+BKOS is a dialogue manager and toolkit for developing **conversationally explainable AI (XAI) interfaces**. BKOS is informed by theories of human argumentation, rhetoric and dialogue, and has several **unique capabilities** when compared with other dialogue-based XAI systems.
 
 # Example
 Below is an example of a supported dialogue between a user (green) and the BKOS system (blue) in the context of using a statistical model (in this case logistic regression) to predict an individual's personality on the basis of her music preferences.
@@ -47,7 +47,10 @@ Earlier paper outlining the central concepts and ideas in BKOS:
 
 * Berman, A. (2024). [Argumentative Dialogue As Basis For Human-AI Collaboration](https://ceur-ws.org/Vol-3825/short3-2.pdf). In *Proceedings of the Communication in Human-AI Interaction Workshop (CHAI-2024)*.
 
-# Requirements
+# Models
+BKOS is primarily intended for truthfully explaining classifications from interpretable models with monotonic relationships between features and target, without any interactions between features, e.g. logistic regression and other kinds of generalized linear models.
+
+# Technical requirements
 BKOS has been tested with Python >= 3.8.
 
 # Installation
@@ -80,6 +83,15 @@ This repo also contains a very simple "hello world" demo which can be tested in 
 ```commandline
 bkos interact bkos.hello_world.config
 ```
+
+# Integration between BKOS and model
+Information about the model and the instance for which the prediction is made is fed to BKOS via a so-called domain.
+
+Information about the instance is provided by the domain as initial beliefs, where each belief contains a proposition. This applies to both predictions (e.g. that the person is extraverted) and circumstances that support claims (e.g. that the person likes danceable music).
+
+Information about the model is provided by the domain through a function that, given a claim (e.g. that the person is extraverted) returns propositions that support the claim (e.g. that the person likes danceable music).
+
+For a description of how such information can be extracted from a linear model, see [this paper](https://ceur-ws.org/Vol-3825/short3-2.pdf).
 
 # The name BKOS
 The name BKOS combines the word "because" with the notion of KoS (conversation oriented semantics; see J. Ginzburg, Semantics for Conversation, 2008).
