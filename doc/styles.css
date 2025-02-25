@@ -24,13 +24,17 @@ html *
 }
 
 .background_S {
-    background-color: #a1bae3;
+    background-color: #b4cffa;
 }
 
 .background_U {
-    background-color: #aac4a5;
+    background-color: #c7ebc0;
 }
 
 .utterance {
     padding: 10px;
+}
+
+.spacing {
+  padding-bottom: 20px;
 }

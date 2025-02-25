@@ -1,0 +1,9 @@
+S: I think this person is introverted.
+U: why?
+S: The person likes non-danceable music.
+U: any other reasons?
+S: The person likes high-energy music.
+U: other reasons?
+S: The person likes sad/depressed/angry music.
+U: other reasons?
+S: I don't see any other reasons to believe that the person is introverted.

@@ -1,0 +1,5 @@
+S: I think this person is introverted.
+U: I don't understand
+S: The person likes non-danceable music.
+U: so what?
+S: I associate a preference for non-danceable music with being introverted.

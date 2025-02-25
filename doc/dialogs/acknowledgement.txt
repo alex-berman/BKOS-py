@@ -1,0 +1,4 @@
+S: I think this person is introverted.
+U: ok
+U: why?
+S: The person likes high-energy music.

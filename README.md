@@ -11,79 +11,32 @@ BKOS supports the following dialogue capabilities, all of which, as far as I kno
 ## ✅ Nested explanations
 BKOS is capable of explaining its own explanation, when requested by the user.
 
-```
-S: I think this person is introverted.
-U: Why?
-S: The person likes high-energy music.
-U: Why do you think so?
-S: Music heard by the person has a higher average score for energy than
-   music in general.
-```
+![Nested explanations](doc/dialogs/nested_explanations.png)
 
 ## ✅ Negative understanding feedback
 Negative understanding feedback from the user (e.g. "I don't understand", "so what?") causes BKOS to context-dependently elaborate its reasoning.
 
-```
-S: I think this person is introverted.
-U: I don't understand
-S: The person likes non-danceable music.
-U: so what?
-S: I associate a preference for non-danceable music with being introverted.
-```
+![Negative understanding feedback](doc/dialogs/negative_understanding.png)
 
 ## ✅ Presupposition violations
 If the user's utterance presupposes a false claim, BKOS denies the presupposed content.
 
-```
-U: why do think the person is extraverted?
-S: No, I don't think this person is extraverted.
-```
-
-```
-U: how does liking non-danceable music explain being extraverted?
-S: No, I don't associate a preference for non-danceable music.
-```
-
-```
-U: why do you think this person likes non-danceable music?
-S: No, I don't think this person likes non-danceable music.
-```
+![Presupposition violations](doc/dialogs/presupposition_violations.png)
 
 ## ✅ Yes-no questions
 BKOS is capable of answering yes-no questions from the user.
 
-```
-U: does the fact that the person likes non-danceable music support the
-   assessment that the person is introverted?
-S: Yes, I associate a preference for non-danceable music with being
-   introverted.
-```
+![Yes-no questions](doc/dialogs/yes_no_questions.png)
 
 ## ✅ Additional information
 BKOS can deliver answers in chunks, and gives feedback if the user continues requesting additional information when no more chunks are available.
 
-```
-S: I think this person is introverted.
-U: why?
-S: The person likes non-danceable music.
-U: any other reasons?
-S: The person likes high-energy music.
-U: other reasons?
-S: The person likes sad/depressed/angry music.
-U: other reasons?
-S: I don't see any other reasons to believe that the person is introverted.
-```
+![Additional information](doc/dialogs/additional_information.png)
 
 ## ✅ Acknowledgement
 BKOS silently accommodates acknowledgements from the user.
 
-```
-S: I think this person is introverted.
-U: ok
-S: (utters nothing)
-U: why?
-S: The person likes high-energy music.    
-```
+![Acknowledgement](doc/dialogs/acknowledgement.png)
 
 # Publications
 Comparison of dialogue capabilities of BKOS and two other conversationally explainable AI interfaces (TalkToModel and Glass-Box):
