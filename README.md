@@ -3,7 +3,7 @@ BKOS is a dialogue engine and toolkit for developing **conversationally explaina
 # Example
 Below is an example of a supported dialogue between a user (green) and the BKOS system (blue) in the context of using a statistical model (in this case logistic regression) to predict an individual's personality on the basis of her music preferences.
 
-![Example dialogue](docs/dialogs/example.png)
+![Example dialogue](doc/dialogs/example.png)
 
 # Unique capabilities
 BKOS supports the following dialogue capabilities, all of which, as far as I know, are unique when compared with other dialogue-based XAI solutions.
