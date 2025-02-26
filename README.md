@@ -34,7 +34,7 @@ BKOS is capable of answering yes-no questions from the user.
 ![Yes-no questions](doc/dialogs/yes_no_questions.png)
 
 ## ✅ Acknowledgement
-BKOS silently accommodates acknowledgements from the user.
+BKOS silently accommodates acknowledgements from the user, without losing track of the dialogue context.
 
 ![Acknowledgement](doc/dialogs/acknowledgement.png)
 
