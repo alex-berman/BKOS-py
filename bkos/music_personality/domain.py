@@ -15,7 +15,7 @@ class MusicPersonalityDomain(Domain):
         self._explainer = resources['explainer']
 
     def initial_agenda(self) -> List[AgendaItem]:
-        return [Respond(BooleanQuestion(Extraverted()))] if self._game_mode else [EmitMove(OfferHelp())]
+        return [Respond(Goal(BooleanQuestion(Extraverted())))] if self._game_mode else [EmitMove(OfferHelp())]
 
     def initial_beliefs(self) -> List[Belief]:
         factors_considered = [
