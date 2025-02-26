@@ -62,7 +62,7 @@ const { exec } = require('child_process');
 
     console.log(`Screenshot saved for ${file} as ${screenshotPath}`);
 
-    exec(`convert "${screenshotPath}" -trim "${screenshotPath}"`, (error, stdout, stderr) => {
+    exec(`convert "${screenshotPath}" -trim -transparent white "${screenshotPath}"`, (error, stdout, stderr) => {
       if (error) {
         console.error(`Error during trimming: ${error.message}`);
         return;
