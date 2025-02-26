@@ -1,4 +1,4 @@
-BKOS (pronounced _because_) is a dialogue manager for **conversationally explainable AI (XAI) interfaces**. Informed by theories of human argumentation, rhetoric and dialogue. Within this theoretical framework, explanations are conceived as arguments for claims, and the structure of those arguments is extracted from information (so called coefficients) learned by the statistical model.
+BKOS (pronounced _because_) is a dialogue manager for **conversationally explainable AI (XAI) interfaces**, informed by theories of human argumentation, rhetoric and dialogue. Within this theoretical framework, explanations are conceived as arguments for claims, and the structure of those arguments is extracted from information (so called coefficients) learned by the statistical model.
 
 # Example
 Below is an example of a supported dialogue between a user (green) and the BKOS system (blue) in the context of using a statistical model (in this case logistic regression) to predict an individual's personality on the basis of her music preferences.
