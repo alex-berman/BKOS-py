@@ -2,7 +2,7 @@ U: why do think the person is extraverted?
 S: No, I don't think this person is extraverted.
 
 U: how does liking non-danceable music explain being extraverted?
-S: No, I don't associate a preference for non-danceable music.
+S: No, I don't associate a preference for non-danceable music with being extraverted.
 
 U: why do you think this person likes non-danceable music?
 S: No, I don't think this person likes non-danceable music.

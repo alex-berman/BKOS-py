@@ -13,6 +13,11 @@ BKOS is capable of explaining its own explanation, when requested by the user.
 
 ![Nested explanations](doc/dialogs/nested_explanations.png)
 
+## ✅ Multiple explanations
+If several circumstances can explain a prediction, BKOS is capable of delivering its answers in chunks. It also gives feedback if the user continues requesting explanations when no more chunks are available.
+
+![Additional information](doc/dialogs/additional_information.png)
+
 ## ✅ Negative understanding feedback
 Negative understanding feedback from the user (e.g. "I don't understand", "so what?") causes BKOS to context-dependently elaborate its reasoning.
 
@@ -27,11 +32,6 @@ If the user's utterance presupposes a false claim, BKOS denies the presupposed c
 BKOS is capable of answering yes-no questions from the user.
 
 ![Yes-no questions](doc/dialogs/yes_no_questions.png)
-
-## ✅ Additional information
-BKOS can deliver answers in chunks, and gives feedback if the user continues requesting additional information when no more chunks are available.
-
-![Additional information](doc/dialogs/additional_information.png)
 
 ## ✅ Acknowledgement
 BKOS silently accommodates acknowledgements from the user.
