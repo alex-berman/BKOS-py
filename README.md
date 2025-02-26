@@ -1,4 +1,4 @@
-BKOS (pronounced _because_) is a dialogue manager for **conversationally explainable AI (XAI) interfaces**. BKOS is informed by theories of human argumentation, rhetoric and dialogue, and has several **unique capabilities** when compared with other dialogue-based XAI systems.
+BKOS (pronounced _because_) is a dialogue manager for **conversationally explainable AI (XAI) interfaces**. Informed by theories of human argumentation, rhetoric and dialogue. Within this theoretical framework, explanations are conceived as arguments for claims, and the structure of those arguments is extracted from information (so called coefficients) learned by the statistical model.
 
 # Example
 Below is an example of a supported dialogue between a user (green) and the BKOS system (blue) in the context of using a statistical model (in this case logistic regression) to predict an individual's personality on the basis of her music preferences.
@@ -67,9 +67,9 @@ The domains contain coverage tests (see examples [here](bkos/music_personality/t
 pytest .
 ```
 # Demos
-The repo contains two example domains (use cases): `music_personality` (involving prediction of personality from music preferences) `hello_world` (minimal loan application scenario with pre-determined prediction and explanation).
+The repo contains two example domains (use cases): `music_personality` (prediction of personality from music preferences) and `hello_world` (minimal loan application scenario with pre-determined prediction and explanation).
 
-For a web-based demo of the music & personality domain, see the game [MindTone](https://dev.clasp.gu.se/mindtone/). A minimal version of MindTone can be tested in the command line by running
+For a web-based demo of the music & personality domain, see the game [MindTone](https://dev.clasp.gu.se/mindtone/). A minimal version of the domain can be tested in the command line by running
 
 ```commandline
 bkos interact bkos.music_personality.config
@@ -94,6 +94,9 @@ For a description of how such information can be extracted from a linear model, 
 
 # Natural language understanding (NLU) and generation (NLG)
 While BKOS focuses on dialogue management, this repo also contains some illustrative examples of how BKOS can be integrated with NLU and NLG components. Both domains use simple keyword-based NLU; however, `music_personality` can optionally be used with an NLU based on a large language model (via OpenAI's API). For NLG, both domains use simple templates.
+
+# Prolog implementation
+There is also an [implementation (and extension) of BKOS in SWI Prolog](https://github.com/alex-berman/BKOS-pl).
 
 # The name BKOS
 The name BKOS combines the word "because" with the notion of KoS (conversation oriented semantics; see J. Ginzburg, Semantics for Conversation, 2008).
