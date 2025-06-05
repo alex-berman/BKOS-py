@@ -41,7 +41,7 @@ BKOS silently accommodates acknowledgements from the user, without losing track 
 # Publications
 Comparison of dialogue capabilities of BKOS and two other conversationally explainable AI interfaces (TalkToModel and Glass-Box):
 
-* Berman, A. and S. Larsson (2025, in prep). Assessing Conversational Capabilities of Explanatory AI Interfaces. In *Proceedings of the International Conference on Artificial Intelligence in HCI, Held as Part of HCI International 2025*. 
+* Berman, A. and S. Larsson (2025). [Assessing Conversational Capabilities of Explanatory AI Interfaces](https://link.springer.com/chapter/10.1007/978-3-031-93412-4_1). In: Degen, H., Ntoa, S. (eds) Artificial Intelligence in HCI. HCII 2025. Lecture Notes in Computer Science, vol 15819. Springer, Cham.
 
 Earlier paper outlining the central concepts and ideas in BKOS:
 
