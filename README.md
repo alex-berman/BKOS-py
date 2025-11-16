@@ -1,5 +1,9 @@
 BKOS (pronounced _because_) is a dialogue manager for **conversationally explainable AI (XAI) interfaces**, informed by theories of human argumentation, rhetoric and dialogue. Within this theoretical framework, explanations are conceived as arguments for claims, and the structure of those arguments is extracted from information (so called coefficients) learned by the statistical model.
 
+# Version
+
+This repository contains BKOS version 1, developed in Python. Note that the more [recent version](https://github.com/alex-berman/BKOS), developed in Prolog, supports a broader range of capabilities.
+
 # Example
 Below is an example of a supported dialogue between a user (green) and the BKOS system (blue) in the context of using a statistical model (in this case logistic regression) to predict an individual's personality on the basis of her music preferences.
 
@@ -39,7 +43,7 @@ BKOS silently accommodates acknowledgements from the user, without losing track 
 ![Acknowledgement](doc/dialogs/acknowledgement.png)
 
 # Publications
-Comparison of dialogue capabilities of BKOS and two other conversationally explainable AI interfaces (TalkToModel and Glass-Box):
+Comparison of dialogue capabilities of BKOS (version 1) and two other conversationally explainable AI interfaces (TalkToModel and Glass-Box):
 
 * Berman, A. and S. Larsson (2025). [Assessing Conversational Capabilities of Explanatory AI Interfaces](https://link.springer.com/chapter/10.1007/978-3-031-93412-4_1). In: Degen, H., Ntoa, S. (eds) Artificial Intelligence in HCI. HCII 2025. Lecture Notes in Computer Science, vol 15819. Springer, Cham.
 
